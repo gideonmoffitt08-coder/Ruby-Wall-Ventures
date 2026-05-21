@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUMEN — AI Content Creation Platform | Ruby Wall Ventures</title>
+  <meta name="description" content="LUMEN is an AI-powered content creation platform built for small and local businesses. Five specialized tools — social posts, viral hooks, brand voice, ad campaigns, and scripts — all for $19.99/month." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .lumen-accent { color: #C0272D; }
+
+    .tools-section {
+      padding: 6rem 2rem;
+      background: var(--light-1);
+    }
+
+    .tools-section.alt {
+      background: var(--light-2);
+    }
+
+    .tool-block {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .tool-block.reverse {
+      direction: rtl;
+    }
+
+    .tool-block.reverse > * {
+      direction: ltr;
+    }
+
+    .tool-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 5rem;
+      font-weight: 800;
+      color: rgba(192,39,45,0.08);
+      line-height: 1;
+      margin-bottom: -1.5rem;
+    }
+
+    .tool-content h3 {
+      color: var(--dark-2);
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .tool-content p {
+      color: var(--gray-mid);
+      margin-bottom: 1rem;
+    }
+
+    .tool-styles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .style-chip {
+      background: rgba(192,39,45,0.08);
+      color: var(--red-bright);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.04em;
+    }
+
+    .tool-visual {
+      background: var(--dark-2);
+      border-radius: var(--radius-md);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tool-visual::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 120px; height: 120px;
+      background: radial-gradient(circle, rgba(192,39,45,0.2) 0%, transparent 70%);
+    }
+
+    .tool-visual-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      margin-bottom: 1.25rem;
+    }
+
+    .mock-post {
+      background: var(--dark-3);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      border: 1px solid var(--border-dark);
+    }
+
+    .mock-post-line {
+      height: 10px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .mock-post-line.short { width: 70%; }
+    .mock-post-line.med { width: 90%; }
+    .mock-post-line.full { width: 100%; }
+
+    .mock-coaching {
+      margin-top: 1rem;
+      background: rgba(192,39,45,0.1);
+      border-left: 3px solid var(--red-bright);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1rem;
+    }
+
+    .mock-coaching-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      margin-bottom: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .mock-coaching-line {
+      height: 8px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+
+    .mock-coaching-line.short { width: 65%; }
+
+    .what-different {
+      background: var(--dark-1);
+      padding: 6rem 2rem;
+    }
+
+    .what-different-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .what-different h2 {
+      color: var(--light-1);
+    }
+
+    .differentiators {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .differentiator {
+      background: var(--dark-3);
+      border-radius: var(--radius-sm);
+      padding: 1.75rem;
+      border: 1px solid var(--border-dark);
+      border-left: 3px solid var(--red-bright);
+    }
+
+    .differentiator h4 {
+      color: var(--light-1);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .differentiator p {
+      color: var(--gray-mid);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    @media (max-width: 860px) {
+      .tool-block {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .tool-block.reverse { direction: ltr; }
+      .tool-visual { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <img src="images/logo-rwv.png" alt="Ruby Wall Ventures" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lumen.html" class="active">LUMEN</a></li>
+        <li><a href="nexus.html">Nexus AI</a></li>
+        <li><a href="meridian.html">Meridian</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="lumen.html">LUMEN</a>
+      <a href="nexus.html">Nexus AI</a>
+      <a href="meridian.html">Meridian</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-product">
+    <img src="images/logo-lumen.png" alt="LUMEN by Ruby Wall" class="hero-product-logo" />
+    <p class="hero-product-powered">By Ruby Wall</p>
+    <h1>AI-Powered Content Creation</h1>
+    <p class="hero-product-tagline">
+      Everything a local business needs to show up online — five intelligent tools, one platform, one price.
+    </p>
+    <div class="hero-product-meta">
+      <span class="price-badge">$19.99 / month</span>
+      <span class="tech-tag">Powered by Claude AI</span>
+      <span class="tech-tag">Cloudflare + GitHub Pages</span>
+    </div>
+    <a href="#tools" class="btn btn-primary">See What LUMEN Does</a>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="features-section gray" style="padding: 4rem 2rem;">
+    <div class="container text-center" style="max-width:760px;">
+      <span class="section-label">What Is LUMEN?</span>
+      <h2 style="color:var(--dark-2); margin-bottom:1.25rem;">Not just a caption generator.</h2>
+      <p style="color:var(--gray-mid);">LUMEN is a complete content intelligence platform with five specialized tools built specifically for local business owners — restaurants, barbershops, gyms, salons, retail shops, and service businesses — who need to be active on social media but don't have the time, budget, or expertise to hire a full marketing team.</p>
+      <p style="color:var(--gray-mid); margin-top:1rem;">Every tool pulls from your Brand Voice profile automatically. Nothing ever sounds generic.</p>
+    </div>
+  </section>
+
+  <!-- THE FIVE TOOLS -->
+  <div id="tools">
+
+    <!-- Tool 1: Content Studio -->
+    <section class="tools-section">
+      <div class="tool-block">
+        <div class="tool-content">
+          <div class="tool-number">01</div>
+          <h3>Content Studio</h3>
+          <p>Answer three simple questions about your business and LUMEN generates scroll-stopping social media posts for Instagram, Facebook, and TikTok in seconds.</p>
+          <p>Every post is tailored to your brand voice, your audience, and your platform. Post coaching cards appear beneath every post telling you exactly how to maximize performance — the best time to post, your strongest element, and one specific tweak to make it hit harder.</p>
+          <ul class="bullet-list mt-1">
+            <li>Instagram, Facebook &amp; TikTok ready</li>
+            <li>Brand-voice matched content every time</li>
+            <li>Post coaching card with every generation</li>
+            <li>Optimal posting time recommendations</li>
+          </ul>
+        </div>
+        <div class="tool-visual">
+          <div class="tool-visual-label">Content Studio Preview</div>
+          <div class="mock-post">
+            <div class="mock-post-line full"></div>
+            <div class="mock-post-line med"></div>
+            <div class="mock-post-line short"></div>
+            <div class="mock-post-line full"></div>
+            <div class="mock-post-line med"></div>
+          </div>
+          <div class="mock-coaching">
+            <div class="mock-coaching-title">Post Coaching Card</div>
+            <div class="mock-coaching-line full"></div>
+            <div class="mock-coaching-line med"></div>
+            <div class="mock-coaching-line short"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tool 2: Viral Hook Generator -->
+    <section class="tools-section alt">
+      <div class="tool-block reverse">
+        <div class="tool-content">
+          <div class="tool-number">02</div>
+          <h3>Viral Hook Generator</h3>
+          <p>Generate eight scroll-stopping opening lines in six different styles. Built for business owners who know what they want to say but struggle with how to start.</p>
+          <div class="tool-styles">
+            <span class="style-chip">Curiosity</span>
+            <span class="style-chip">Bold Claim</span>
+            <span class="style-chip">Story</span>
+            <span class="style-chip">Question</span>
+            <span class="style-chip">Controversial</span>
+            <span class="style-chip">Local Pride</span>
+          </div>
+        </div>
+        <div class="tool-visual">
+          <div class="tool-visual-label">Hook Generator Preview</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div class="mock-post" style="padding:0.85rem;">
+              <div class="mock-post-line med"></div>
+            </div>
+            <div class="mock-post" style="padding:0.85rem;">
+              <div class="mock-post-line full"></div>
+            </div>
+            <div class="mock-post" style="padding:0.85rem;">
+              <div class="mock-post-line short"></div>
+            </div>
+            <div class="mock-post" style="padding:0.85rem;">
+              <div class="mock-post-line med"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tool 3: Brand Voice Trainer -->
+    <section class="tools-section">
+      <div class="tool-block">
+        <div class="tool-content">
+          <div class="tool-number">03</div>
+          <h3>Brand Voice Trainer</h3>
+          <p>A ten-question onboarding experience that teaches LUMEN exactly how your business sounds. Once trained, every piece of content LUMEN creates automatically reflects your personality, your audience, and your communication style.</p>
+          <p>No two businesses sound the same. Your brand voice is stored and applied automatically to every tool in the platform — so you never have to re-explain yourself.</p>
+          <ul class="bullet-list mt-1">
+            <li>10-question voice onboarding</li>
+            <li>Applied automatically across all five tools</li>
+            <li>Unique to every business</li>
+            <li>Stored locally per user account</li>
+          </ul>
+        </div>
+        <div class="tool-visual">
+          <div class="tool-visual-label">Brand Voice Setup</div>
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div style="background:rgba(192,39,45,0.15);border-radius:6px;padding:1rem;">
+              <div style="height:8px;background:rgba(192,39,45,0.4);border-radius:4px;width:60%;margin-bottom:6px;"></div>
+              <div class="mock-post-line med" style="margin:0;"></div>
+            </div>
+            <div style="background:var(--dark-3);border-radius:6px;padding:1rem;border:1px solid var(--border-dark);">
+              <div class="mock-post-line full" style="margin-bottom:6px;"></div>
+              <div class="mock-post-line short"></div>
+            </div>
+            <div style="background:var(--dark-3);border-radius:6px;padding:1rem;border:1px solid var(--border-dark);">
+              <div class="mock-post-line med" style="margin-bottom:6px;"></div>
+              <div class="mock-post-line full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tool 4: Ad Campaign Builder -->
+    <section class="tools-section alt">
+      <div class="tool-block reverse">
+        <div class="tool-content">
+          <div class="tool-number">04</div>
+          <h3>Ad Campaign Builder</h3>
+          <p>Generate complete advertising campaigns for Facebook, Instagram, Google, and TikTok — fully structured with campaign objective, target audience, budget recommendation, and three A/B test variations.</p>
+          <p>Each variation includes a headline, body copy, and call to action — ready to launch. No agency required.</p>
+          <div class="tool-styles" style="margin-top:1.25rem;">
+            <span class="style-chip">Facebook</span>
+            <span class="style-chip">Instagram</span>
+            <span class="style-chip">Google</span>
+            <span class="style-chip">TikTok</span>
+          </div>
+        </div>
+        <div class="tool-visual">
+          <div class="tool-visual-label">Ad Campaign Structure</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="background:rgba(192,39,45,0.1);border-left:3px solid var(--red-bright);padding:0.85rem;border-radius:0 6px 6px 0;">
+              <div style="height:7px;background:rgba(192,39,45,0.4);border-radius:4px;width:40%;margin-bottom:6px;"></div>
+              <div class="mock-post-line full" style="margin:0;"></div>
+            </div>
+            <div class="mock-post" style="padding:0.85rem;">
+              <div class="mock-post-line short" style="margin-bottom:6px;"></div>
+              <div class="mock-post-line med"></div>
+            </div>
+            <div class="mock-post" style="padding:0.85rem;">
+              <div class="mock-post-line med" style="margin-bottom:6px;"></div>
+              <div class="mock-post-line full"></div>
+            </div>
+            <div class="mock-post" style="padding:0.85rem;">
+              <div class="mock-post-line full" style="margin-bottom:6px;"></div>
+              <div class="mock-post-line short"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tool 5: Script Writer -->
+    <section class="tools-section">
+      <div class="tool-block">
+        <div class="tool-content">
+          <div class="tool-number">05</div>
+          <h3>Script Writer</h3>
+          <p>Professional scripts for TikTok, Instagram Reels, YouTube videos, and podcast episodes. Short, medium, or long format. Fully structured with labeled sections and visual cues for video.</p>
+          <p>One-click export as a formatted text file — ready to record from the moment it generates.</p>
+          <ul class="bullet-list mt-1">
+            <li>TikTok &amp; Instagram Reels scripts</li>
+            <li>YouTube video scripts</li>
+            <li>Podcast episode scripts</li>
+            <li>Short, medium, and long format</li>
+            <li>One-click export to text file</li>
+          </ul>
+        </div>
+        <div class="tool-visual">
+          <div class="tool-visual-label">Script Output</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="background:rgba(255,255,255,0.04);border-radius:6px;padding:0.85rem;border:1px solid var(--border-dark);">
+              <div style="height:7px;background:rgba(192,39,45,0.5);border-radius:4px;width:35%;margin-bottom:8px;"></div>
+              <div class="mock-post-line full" style="margin-bottom:5px;"></div>
+              <div class="mock-post-line med"></div>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border-radius:6px;padding:0.85rem;border:1px solid var(--border-dark);">
+              <div style="height:7px;background:rgba(192,39,45,0.5);border-radius:4px;width:25%;margin-bottom:8px;"></div>
+              <div class="mock-post-line med" style="margin-bottom:5px;"></div>
+              <div class="mock-post-line full" style="margin-bottom:5px;"></div>
+              <div class="mock-post-line short"></div>
+            </div>
+            <div style="background:rgba(192,39,45,0.1);border-radius:6px;padding:0.6rem 1rem;cursor:pointer;display:flex;align-items:center;gap:8px;">
+              <div style="width:12px;height:12px;background:var(--red-bright);border-radius:2px;flex-shrink:0;"></div>
+              <div style="height:7px;background:rgba(255,255,255,0.2);border-radius:4px;width:80%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- end #tools -->
+
+  <!-- CAPTION TO STRATEGY -->
+  <section style="padding:4rem 2rem;background:var(--dark-4);">
+    <div class="container text-center" style="max-width:700px;">
+      <span class="section-label">Caption-to-Strategy</span>
+      <h2 style="color:var(--light-1);margin-bottom:1.25rem;">Every session becomes a growth strategy.</h2>
+      <p style="color:var(--gray-light);">After every content session, LUMEN automatically generates a full weekly posting schedule, optimal posting times, content mix recommendations, and a personalized growth insight — so every piece of content is part of a bigger plan.</p>
+    </div>
+  </section>
+
+  <!-- WHAT MAKES LUMEN DIFFERENT -->
+  <section class="what-different">
+    <div class="what-different-inner">
+      <span class="section-label">What Makes LUMEN Different</span>
+      <h2>Built from the ground up for local business.</h2>
+      <div class="divider"></div>
+      <div class="differentiators">
+        <div class="differentiator">
+          <h4>Brand Voice Applied Everywhere</h4>
+          <p>Every tool pulls from your Brand Voice profile automatically. Nothing ever sounds generic, and no two businesses sound the same.</p>
+        </div>
+        <div class="differentiator">
+          <h4>Caption-to-Strategy Built In</h4>
+          <p>After every session, LUMEN generates a full weekly posting schedule, optimal times, content mix, and a personalized growth insight.</p>
+        </div>
+        <div class="differentiator">
+          <h4>100% Original Content</h4>
+          <p>LUMEN never references other brands by name. Every word is original and owned entirely by the client.</p>
+        </div>
+        <div class="differentiator">
+          <h4>Five Tools, One Price</h4>
+          <p>Content Studio, Hook Generator, Brand Voice Trainer, Ad Campaign Builder, and Script Writer — all included for $19.99 a month.</p>
+        </div>
+        <div class="differentiator">
+          <h4>Invite-Only Access</h4>
+          <p>Clean, dark interface with invite-only client access and brand voice memory stored locally per user account.</p>
+        </div>
+        <div class="differentiator">
+          <h4>Secure Architecture</h4>
+          <p>Powered by Claude AI through a secure Cloudflare Worker backend. API credentials are never exposed to the client.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="audience-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Who LUMEN Is For</span>
+        <h2 style="color:var(--dark-2);">Local businesses ready to show up online.</h2>
+        <p>LUMEN was built for business owners who know they need to be active on social media but don't have the time or budget to hire a full marketing team.</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-item">Restaurants &amp; food businesses looking to build a local following</div>
+        <div class="audience-item">Barbershops &amp; salons wanting to attract new clients online</div>
+        <div class="audience-item">Gyms &amp; fitness businesses promoting classes and membership</div>
+        <div class="audience-item">Retail shops running promotions and seasonal campaigns</div>
+        <div class="audience-item">Service businesses generating leads through social content</div>
+        <div class="audience-item">Any local owner who needs consistent, professional content without the agency cost</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <span class="section-label">Pricing</span>
+      <h2>One flat price. Five powerful tools.</h2>
+      <p>LUMEN gives you access to the full content platform — all five tools, brand voice memory, and weekly strategy — for $19.99 a month. No upsells. No tiers. One price.</p>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid var(--border-dark);border-radius:var(--radius-md);padding:2.5rem;margin-bottom:2.5rem;display:inline-block;">
+        <div style="font-family:'Montserrat',sans-serif;font-size:3.5rem;font-weight:800;color:var(--light-1);line-height:1;">$19.99</div>
+        <div style="color:var(--gray-mid);font-size:1rem;margin-top:0.25rem;">per month</div>
+        <div style="height:1px;background:var(--border-dark);margin:1.5rem 0;"></div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;text-align:left;">
+          <li style="color:var(--gray-light);font-size:0.93rem;">✓&nbsp; Content Studio</li>
+          <li style="color:var(--gray-light);font-size:0.93rem;">✓&nbsp; Viral Hook Generator</li>
+          <li style="color:var(--gray-light);font-size:0.93rem;">✓&nbsp; Brand Voice Trainer</li>
+          <li style="color:var(--gray-light);font-size:0.93rem;">✓&nbsp; Ad Campaign Builder</li>
+          <li style="color:var(--gray-light);font-size:0.93rem;">✓&nbsp; Script Writer</li>
+          <li style="color:var(--gray-light);font-size:0.93rem;">✓&nbsp; Caption-to-Strategy</li>
+        </ul>
+      </div>
+      <div class="cta-actions">
+        <a href="index.html#products" class="btn btn-outline">← Back to Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="images/logo-rwv.png" alt="Ruby Wall Ventures" />
+          <span class="footer-brand-name">Ruby Wall Ventures</span>
+        </div>
+        <div class="footer-links-group">
+          <h5>Products</h5>
+          <ul>
+            <li><a href="lumen.html">LUMEN</a></li>
+            <li><a href="nexus.html">Nexus AI</a></li>
+            <li><a href="meridian.html">Meridian</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html">Home</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 <span>Ruby Wall Ventures</span>. All rights reserved.</p>
+        <p class="footer-tagline">LUMEN by Ruby Wall</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
