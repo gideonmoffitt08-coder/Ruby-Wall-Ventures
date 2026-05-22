@@ -4,264 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nexus AI — AI Business Advisor | Ruby Wall Ventures</title>
-  <meta name="description" content="Nexus AI is a full-featured AI-powered business advisor platform built by Ruby Wall. A personal business consultant available 24/7, with conversation memory, growth plans, and action tracking." />
+  <meta name="description" content="Nexus AI is a full-featured AI-powered business advisor platform built by Ruby Wall." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .nexus-dark { background: #1C2331; }
-
-    .features-row {
-      padding: 6rem 2rem;
-      background: var(--light-1);
-    }
-
-    .features-row.dark-bg {
-      background: var(--dark-2);
-    }
-
-    .feature-row-block {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .feature-row-block.flip {
-      direction: rtl;
-    }
-
-    .feature-row-block.flip > * {
-      direction: ltr;
-    }
-
-    .feature-num {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 4.5rem;
-      font-weight: 800;
-      color: rgba(192,39,45,0.1);
-      line-height: 1;
-      margin-bottom: -1.25rem;
-    }
-
-    .feature-row-text h3 {
-      font-size: 1.65rem;
-      margin-bottom: 1rem;
-    }
-
-    .feature-row-text p {
-      margin-bottom: 0.9rem;
-    }
-
+    .features-row { padding: 6rem 2rem; background: var(--light-1); }
+    .features-row.dark-bg { background: var(--dark-2); }
+    .feature-row-block { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .feature-row-block.flip { direction: rtl; }
+    .feature-row-block.flip > * { direction: ltr; }
+    .feature-num { font-family: 'Montserrat', sans-serif; font-size: 4.5rem; font-weight: 800; color: rgba(192,39,45,0.1); line-height: 1; margin-bottom: -1.25rem; }
+    .feature-row-text h3 { font-size: 1.65rem; margin-bottom: 1rem; }
+    .feature-row-text p { margin-bottom: 0.9rem; }
     .dark-bg .feature-row-text h3 { color: var(--light-1); }
     .dark-bg .feature-row-text p { color: var(--gray-light); }
     .dark-bg .feature-row-text .bullet-list li { color: var(--gray-light); }
-
-    .feature-row-visual {
-      background: var(--dark-3);
-      border-radius: var(--radius-md);
-      padding: 2rem;
-      border: 1px solid var(--border-dark);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .feature-row-visual::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 80px; height: 80px;
-      background: radial-gradient(circle, rgba(192,39,45,0.25) 0%, transparent 70%);
-    }
-
-    .vis-label {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--red-bright);
-      margin-bottom: 1rem;
-    }
-
-    .chat-bubble {
-      border-radius: 12px;
-      padding: 0.75rem 1rem;
-      margin-bottom: 8px;
-    }
-
-    .chat-bubble.user {
-      background: rgba(192,39,45,0.15);
-      border-bottom-right-radius: 4px;
-      margin-left: 20%;
-    }
-
-    .chat-bubble.ai {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border-dark);
-      border-bottom-left-radius: 4px;
-      margin-right: 10%;
-    }
-
-    .bubble-line {
-      height: 8px;
-      border-radius: 4px;
-      margin-bottom: 5px;
-    }
-
+    .feature-row-visual { background: var(--dark-3); border-radius: var(--radius-md); padding: 2rem; border: 1px solid var(--border-dark); }
+    .vis-label { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red-bright); margin-bottom: 1rem; }
+    .chat-bubble { border-radius: 12px; padding: 0.75rem 1rem; margin-bottom: 8px; }
+    .chat-bubble.user { background: rgba(192,39,45,0.15); border-bottom-right-radius: 4px; margin-left: 20%; }
+    .chat-bubble.ai { background: rgba(255,255,255,0.05); border: 1px solid var(--border-dark); border-bottom-left-radius: 4px; margin-right: 10%; }
+    .bubble-line { height: 8px; border-radius: 4px; margin-bottom: 5px; }
     .bubble-line.user-line { background: rgba(192,39,45,0.4); }
     .bubble-line.ai-line { background: rgba(255,255,255,0.1); }
-
-    .memory-chip {
-      background: rgba(192,39,45,0.1);
-      border: 1px solid rgba(192,39,45,0.25);
-      border-radius: 6px;
-      padding: 0.6rem 1rem;
-      margin-top: 6px;
-    }
-
-    .memory-chip-title {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--red-bright);
-      margin-bottom: 4px;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .memory-chip-line {
-      height: 7px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 3px;
-      margin-bottom: 4px;
-    }
-
-    .access-tiers {
-      padding: 6rem 2rem;
-      background: var(--dark-1);
-    }
-
-    .tiers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 720px;
-      margin: 3rem auto 0;
-    }
-
-    .tier-card {
-      background: var(--dark-3);
-      border-radius: var(--radius-md);
-      padding: 2.5rem 2rem;
-      border: 1px solid var(--border-dark);
-      transition: all var(--transition);
-    }
-
-    .tier-card:hover {
-      border-color: rgba(192,39,45,0.4);
-      transform: translateY(-3px);
-    }
-
-    .tier-card.primary {
-      border-color: var(--red-bright);
-      box-shadow: 0 0 0 1px rgba(192,39,45,0.2), 0 8px 32px rgba(0,0,0,0.3);
-    }
-
-    .tier-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-      font-size: 1.25rem;
-    }
-
+    .memory-chip { background: rgba(192,39,45,0.1); border: 1px solid rgba(192,39,45,0.25); border-radius: 6px; padding: 0.6rem 1rem; margin-top: 6px; }
+    .memory-chip-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red-bright); margin-bottom: 4px; font-family: 'Montserrat', sans-serif; }
+    .memory-chip-line { height: 7px; background: rgba(255,255,255,0.08); border-radius: 3px; margin-bottom: 4px; }
+    .access-tiers { padding: 6rem 2rem; background: var(--dark-1); }
+    .tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 720px; margin: 3rem auto 0; }
+    .tier-card { background: var(--dark-3); border-radius: var(--radius-md); padding: 2.5rem 2rem; border: 1px solid var(--border-dark); transition: all var(--transition); }
+    .tier-card.primary { border-color: var(--red-bright); box-shadow: 0 0 0 1px rgba(192,39,45,0.2), 0 8px 32px rgba(0,0,0,0.3); }
+    .tier-icon { width: 44px; height: 44px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; font-size: 1.25rem; }
     .tier-icon.red { background: rgba(192,39,45,0.15); }
     .tier-icon.gray { background: rgba(255,255,255,0.06); }
-
-    .tier-card h3 {
-      color: var(--light-1);
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .tier-card p {
-      color: var(--gray-mid);
-      font-size: 0.92rem;
-      line-height: 1.65;
-      margin-bottom: 1.5rem;
-    }
-
-    .tier-detail {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: var(--gray-light);
-      font-size: 0.88rem;
-      padding: 0.4rem 0;
-      border-bottom: 1px solid var(--border-dark);
-    }
-
+    .tier-card h3 { color: var(--light-1); font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .tier-card p { color: var(--gray-mid); font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+    .tier-detail { display: flex; align-items: center; gap: 0.6rem; color: var(--gray-light); font-size: 0.88rem; padding: 0.4rem 0; border-bottom: 1px solid var(--border-dark); }
     .tier-detail:last-child { border-bottom: none; }
-
-    .tier-detail-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--red-bright);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .onboarding-section {
-      padding: 5rem 2rem;
-      background: var(--dark-4);
-    }
-
-    .onboarding-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      max-width: var(--max-width);
-      margin: 3rem auto 0;
-    }
-
-    .onboarding-step {
-      text-align: center;
-      position: relative;
-    }
-
-    .step-num {
-      width: 48px;
-      height: 48px;
-      background: var(--red-bright);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: var(--light-1);
-      margin: 0 auto 1rem;
-    }
-
-    .onboarding-step h4 {
-      color: var(--light-1);
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .onboarding-step p {
-      color: var(--gray-mid);
-      font-size: 0.85rem;
-      line-height: 1.6;
-    }
-
+    .tier-detail-dot { width: 6px; height: 6px; background: var(--red-bright); border-radius: 50%; flex-shrink: 0; }
+    .onboarding-section { padding: 5rem 2rem; background: var(--dark-4); }
+    .onboarding-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: var(--max-width); margin: 3rem auto 0; }
+    .onboarding-step { text-align: center; }
+    .step-num { width: 48px; height: 48px; background: var(--red-bright); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--light-1); margin: 0 auto 1rem; }
+    .onboarding-step h4 { color: var(--light-1); font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .onboarding-step p { color: var(--gray-mid); font-size: 0.85rem; line-height: 1.6; }
     @media (max-width: 860px) {
       .feature-row-block { grid-template-columns: 1fr; gap: 2.5rem; }
       .feature-row-block.flip { direction: ltr; }
@@ -270,39 +57,27 @@
   </style>
 </head>
 <body>
-
-  <!-- NAVIGATION -->
   <nav class="nav">
     <div class="nav-inner">
-      <a class="nav-logo" href="index.html">
-        <img src="images/logo-rwv.png.PNG" alt="Ruby Wall Ventures" />
-      </a>
+      <a class="nav-logo" href="index.html"><img src="images:logo-rwv.PNG" alt="Ruby Wall Ventures" /></a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="lumen.html">LUMEN</a></li>
         <li><a href="nexus.html" class="active">Nexus AI</a></li>
         <li><a href="meridian.html">Meridian</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Home</a>
-      <a href="lumen.html">LUMEN</a>
-      <a href="nexus.html">Nexus AI</a>
-      <a href="meridian.html">Meridian</a>
+      <a href="index.html">Home</a><a href="lumen.html">LUMEN</a><a href="nexus.html">Nexus AI</a><a href="meridian.html">Meridian</a>
     </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero-product">
-    <img src="images/logo-nexus.png.PNG" alt="Nexus AI by Ruby Wall" class="hero-product-logo" />
+    <img src="images:logo-nexus.PNG" alt="Nexus AI by Ruby Wall" class="hero-product-logo" />
     <p class="hero-product-powered">Powered by Ruby Wall</p>
     <h1>Your AI Business Advisor</h1>
-    <p class="hero-product-tagline">
-      A personal business consultant available 24 hours a day, 7 days a week — powered by advanced AI and built specifically for local business owners.
-    </p>
+    <p class="hero-product-tagline">A personal business consultant available 24 hours a day, 7 days a week — powered by advanced AI and built specifically for local business owners.</p>
     <div class="hero-product-meta">
       <span class="tech-tag">Powered by Claude AI</span>
       <span class="tech-tag">Cloudflare Workers</span>
@@ -311,7 +86,6 @@
     <a href="#features" class="btn btn-primary">Explore Nexus AI</a>
   </section>
 
-  <!-- OVERVIEW -->
   <section class="features-section gray" style="padding:4rem 2rem;">
     <div class="container text-center" style="max-width:760px;">
       <span class="section-label">What Is Nexus AI?</span>
@@ -321,49 +95,32 @@
     </div>
   </section>
 
-  <!-- FEATURES -->
   <div id="features">
-
-    <!-- Feature 1: Personalized Advising -->
     <section class="features-row">
       <div class="feature-row-block">
         <div class="feature-row-text">
           <div class="feature-num">01</div>
           <h3>Personalized Business Advising</h3>
-          <p>Every client goes through a quick onboarding process that captures their business type, primary goal, and experience level. From that moment forward, every conversation is tailored to their specific situation — not generic advice pulled from a textbook.</p>
-          <p>Nexus AI is built specifically for small and local businesses in the Katy and Houston area — the kind of businesses that don't have marketing departments, business coaches, or large budgets.</p>
+          <p>Every client goes through a quick onboarding process that captures their business type, primary goal, and experience level. From that moment forward, every conversation is tailored to their specific situation.</p>
+          <p>Nexus AI is built specifically for small and local businesses in the Katy and Houston area.</p>
         </div>
         <div class="feature-row-visual">
           <div class="vis-label">Nexus AI Advisor</div>
-          <div class="chat-bubble user">
-            <div class="bubble-line user-line" style="width:80%;"></div>
-            <div class="bubble-line user-line" style="width:60%;margin:0;"></div>
-          </div>
-          <div class="chat-bubble ai">
-            <div class="bubble-line ai-line" style="width:100%;"></div>
-            <div class="bubble-line ai-line" style="width:90%;"></div>
-            <div class="bubble-line ai-line" style="width:75%;margin:0;"></div>
-          </div>
-          <div class="chat-bubble user">
-            <div class="bubble-line user-line" style="width:70%;margin:0;"></div>
-          </div>
-          <div class="chat-bubble ai">
-            <div class="bubble-line ai-line" style="width:100%;"></div>
-            <div class="bubble-line ai-line" style="width:85%;"></div>
-            <div class="bubble-line ai-line" style="width:60%;margin:0;"></div>
-          </div>
+          <div class="chat-bubble user"><div class="bubble-line user-line" style="width:80%;"></div><div class="bubble-line user-line" style="width:60%;margin:0;"></div></div>
+          <div class="chat-bubble ai"><div class="bubble-line ai-line" style="width:100%;"></div><div class="bubble-line ai-line" style="width:90%;"></div><div class="bubble-line ai-line" style="width:75%;margin:0;"></div></div>
+          <div class="chat-bubble user"><div class="bubble-line user-line" style="width:70%;margin:0;"></div></div>
+          <div class="chat-bubble ai"><div class="bubble-line ai-line" style="width:100%;"></div><div class="bubble-line ai-line" style="width:85%;"></div><div class="bubble-line ai-line" style="width:60%;margin:0;"></div></div>
         </div>
       </div>
     </section>
 
-    <!-- Feature 2: Conversation Memory -->
     <section class="features-row dark-bg">
       <div class="feature-row-block flip">
         <div class="feature-row-text">
           <div class="feature-num">02</div>
           <h3>Conversation Memory</h3>
           <p>Nexus AI remembers. After every session, it automatically extracts and saves key facts, decisions, challenges, and action items from the conversation.</p>
-          <p>When clients return, the advisor already knows who they are, what they have been working on, and where they left off. No re-explaining. No starting over.</p>
+          <p>When clients return, the advisor already knows who they are, what they have been working on, and where they left off.</p>
           <ul class="bullet-list mt-1">
             <li>Automatically extracts key facts after each session</li>
             <li>Saves decisions, challenges, and action items</li>
@@ -372,33 +129,19 @@
         </div>
         <div class="feature-row-visual">
           <div class="vis-label">Session Memory</div>
-          <div class="memory-chip">
-            <div class="memory-chip-title">Business Profile</div>
-            <div class="memory-chip-line" style="width:90%;"></div>
-            <div class="memory-chip-line" style="width:70%;"></div>
-          </div>
-          <div class="memory-chip" style="margin-top:10px;">
-            <div class="memory-chip-title">Last Session — Key Facts</div>
-            <div class="memory-chip-line" style="width:100%;"></div>
-            <div class="memory-chip-line" style="width:80%;"></div>
-            <div class="memory-chip-line" style="width:60%;margin-bottom:0;"></div>
-          </div>
-          <div class="memory-chip" style="margin-top:10px;">
-            <div class="memory-chip-title">Open Action Items</div>
-            <div class="memory-chip-line" style="width:85%;"></div>
-            <div class="memory-chip-line" style="width:65%;margin-bottom:0;"></div>
-          </div>
+          <div class="memory-chip"><div class="memory-chip-title">Business Profile</div><div class="memory-chip-line" style="width:90%;"></div><div class="memory-chip-line" style="width:70%;"></div></div>
+          <div class="memory-chip" style="margin-top:10px;"><div class="memory-chip-title">Last Session</div><div class="memory-chip-line" style="width:100%;"></div><div class="memory-chip-line" style="width:80%;"></div><div class="memory-chip-line" style="width:60%;margin-bottom:0;"></div></div>
+          <div class="memory-chip" style="margin-top:10px;"><div class="memory-chip-title">Open Action Items</div><div class="memory-chip-line" style="width:85%;"></div><div class="memory-chip-line" style="width:65%;margin-bottom:0;"></div></div>
         </div>
       </div>
     </section>
 
-    <!-- Feature 3: Chat History -->
     <section class="features-row">
       <div class="feature-row-block">
         <div class="feature-row-text">
           <div class="feature-num">03</div>
           <h3>Chat History</h3>
-          <p>Like ChatGPT or Claude, clients can start new conversations while keeping all past chats accessible in a sidebar. Every conversation is saved, searchable, and organized by date — so nothing gets lost.</p>
+          <p>Clients can start new conversations while keeping all past chats accessible in a sidebar. Every conversation is saved, searchable, and organized by date.</p>
           <ul class="bullet-list mt-1">
             <li>All conversations saved permanently</li>
             <li>Organized and searchable by date</li>
@@ -410,40 +153,24 @@
           <div style="display:flex;gap:12px;height:160px;">
             <div style="width:38%;border-right:1px solid var(--border-dark);padding-right:12px;display:flex;flex-direction:column;gap:8px;">
               <div style="height:8px;background:rgba(192,39,45,0.3);border-radius:3px;width:70%;"></div>
-              <div style="background:rgba(192,39,45,0.12);border-radius:4px;padding:6px 8px;border:1px solid rgba(192,39,45,0.2);">
-                <div style="height:6px;background:rgba(255,255,255,0.15);border-radius:3px;margin-bottom:4px;"></div>
-                <div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;width:60%;"></div>
-              </div>
-              <div style="padding:6px 8px;">
-                <div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;margin-bottom:4px;"></div>
-                <div style="height:6px;background:rgba(255,255,255,0.05);border-radius:3px;width:70%;"></div>
-              </div>
-              <div style="padding:6px 8px;">
-                <div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;margin-bottom:4px;"></div>
-                <div style="height:6px;background:rgba(255,255,255,0.05);border-radius:3px;width:50%;"></div>
-              </div>
+              <div style="background:rgba(192,39,45,0.12);border-radius:4px;padding:6px 8px;border:1px solid rgba(192,39,45,0.2);"><div style="height:6px;background:rgba(255,255,255,0.15);border-radius:3px;margin-bottom:4px;"></div><div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;width:60%;"></div></div>
+              <div style="padding:6px 8px;"><div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;margin-bottom:4px;"></div><div style="height:6px;background:rgba(255,255,255,0.05);border-radius:3px;width:70%;"></div></div>
             </div>
             <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;">
-              <div class="chat-bubble ai" style="margin-right:0;">
-                <div class="bubble-line ai-line" style="width:100%;"></div>
-                <div class="bubble-line ai-line" style="width:80%;margin:0;"></div>
-              </div>
-              <div class="chat-bubble user" style="margin-left:15%;">
-                <div class="bubble-line user-line" style="width:70%;margin:0;"></div>
-              </div>
+              <div class="chat-bubble ai" style="margin-right:0;"><div class="bubble-line ai-line" style="width:100%;"></div><div class="bubble-line ai-line" style="width:80%;margin:0;"></div></div>
+              <div class="chat-bubble user" style="margin-left:15%;"><div class="bubble-line user-line" style="width:70%;margin:0;"></div></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Feature 4: Growth Plans -->
     <section class="features-row dark-bg">
       <div class="feature-row-block flip">
         <div class="feature-row-text">
           <div class="feature-num">04</div>
           <h3>30 &amp; 90-Day Growth Plans</h3>
-          <p>Clients can generate a fully personalized growth plan at any time. Answer two questions — what you want to improve and your timeline — and Nexus AI builds a structured, phase-by-phase action plan with specific tasks tailored to your exact business type and goal.</p>
+          <p>Generate a fully personalized growth plan at any time. Answer two questions and Nexus AI builds a structured, phase-by-phase action plan with specific tasks tailored to your exact business type and goal.</p>
           <ul class="bullet-list mt-1">
             <li>30-day and 90-day plan options</li>
             <li>Structured phases with specific tasks</li>
@@ -454,32 +181,19 @@
         <div class="feature-row-visual">
           <div class="vis-label">30-Day Growth Plan</div>
           <div style="display:flex;flex-direction:column;gap:8px;">
-            <div style="background:rgba(192,39,45,0.1);border-left:3px solid var(--red-bright);padding:0.85rem;border-radius:0 6px 6px 0;">
-              <div style="height:7px;background:rgba(192,39,45,0.5);border-radius:3px;width:40%;margin-bottom:6px;"></div>
-              <div style="height:7px;background:rgba(255,255,255,0.1);border-radius:3px;width:90%;margin-bottom:4px;"></div>
-              <div style="height:7px;background:rgba(255,255,255,0.1);border-radius:3px;width:70%;"></div>
-            </div>
-            <div style="background:rgba(255,255,255,0.04);border-left:3px solid rgba(255,255,255,0.15);padding:0.85rem;border-radius:0 6px 6px 0;">
-              <div style="height:7px;background:rgba(255,255,255,0.15);border-radius:3px;width:35%;margin-bottom:6px;"></div>
-              <div style="height:7px;background:rgba(255,255,255,0.08);border-radius:3px;width:100%;margin-bottom:4px;"></div>
-              <div style="height:7px;background:rgba(255,255,255,0.08);border-radius:3px;width:80%;"></div>
-            </div>
-            <div style="background:rgba(255,255,255,0.04);border-left:3px solid rgba(255,255,255,0.15);padding:0.85rem;border-radius:0 6px 6px 0;">
-              <div style="height:7px;background:rgba(255,255,255,0.15);border-radius:3px;width:38%;margin-bottom:6px;"></div>
-              <div style="height:7px;background:rgba(255,255,255,0.08);border-radius:3px;width:85%;"></div>
-            </div>
+            <div style="background:rgba(192,39,45,0.1);border-left:3px solid var(--red-bright);padding:0.85rem;border-radius:0 6px 6px 0;"><div style="height:7px;background:rgba(192,39,45,0.5);border-radius:3px;width:40%;margin-bottom:6px;"></div><div style="height:7px;background:rgba(255,255,255,0.1);border-radius:3px;width:90%;margin-bottom:4px;"></div><div style="height:7px;background:rgba(255,255,255,0.1);border-radius:3px;width:70%;"></div></div>
+            <div style="background:rgba(255,255,255,0.04);border-left:3px solid rgba(255,255,255,0.15);padding:0.85rem;border-radius:0 6px 6px 0;"><div style="height:7px;background:rgba(255,255,255,0.15);border-radius:3px;width:35%;margin-bottom:6px;"></div><div style="height:7px;background:rgba(255,255,255,0.08);border-radius:3px;width:100%;margin-bottom:4px;"></div><div style="height:7px;background:rgba(255,255,255,0.08);border-radius:3px;width:80%;"></div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Feature 5: Action Extractor -->
     <section class="features-row">
       <div class="feature-row-block">
         <div class="feature-row-text">
           <div class="feature-num">05</div>
           <h3>Action Item Extractor</h3>
-          <p>After any advisory conversation, tap one button and Nexus AI automatically extracts every task, recommendation, and to-do from the chat into a personal checklist. Items can be checked off as completed and cleared when done.</p>
+          <p>After any advisory conversation, tap one button and Nexus AI automatically extracts every task, recommendation, and to-do from the chat into a personal checklist.</p>
           <ul class="bullet-list mt-1">
             <li>One-tap extraction from any conversation</li>
             <li>Organized personal checklist</li>
@@ -490,36 +204,20 @@
         <div class="feature-row-visual">
           <div class="vis-label">Action Checklist</div>
           <div style="display:flex;flex-direction:column;gap:8px;">
-            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(255,255,255,0.04);border-radius:6px;">
-              <div style="width:18px;height:18px;background:rgba(192,39,45,0.2);border:2px solid var(--red-bright);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
-                <div style="width:8px;height:5px;border-left:2px solid var(--red-bright);border-bottom:2px solid var(--red-bright);transform:rotate(-45deg) translateY(-1px);"></div>
-              </div>
-              <div style="height:8px;background:rgba(255,255,255,0.15);border-radius:3px;flex:1;text-decoration:line-through;opacity:0.5;"></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(192,39,45,0.08);border-radius:6px;border:1px solid rgba(192,39,45,0.2);">
-              <div style="width:18px;height:18px;border:2px solid rgba(192,39,45,0.5);border-radius:4px;flex-shrink:0;"></div>
-              <div style="height:8px;background:rgba(255,255,255,0.2);border-radius:3px;flex:1;"></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(255,255,255,0.04);border-radius:6px;">
-              <div style="width:18px;height:18px;border:2px solid rgba(255,255,255,0.15);border-radius:4px;flex-shrink:0;"></div>
-              <div style="height:8px;background:rgba(255,255,255,0.1);border-radius:3px;flex:1;"></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(255,255,255,0.04);border-radius:6px;">
-              <div style="width:18px;height:18px;border:2px solid rgba(255,255,255,0.15);border-radius:4px;flex-shrink:0;"></div>
-              <div style="height:8px;background:rgba(255,255,255,0.1);border-radius:3px;width:70%;"></div>
-            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(255,255,255,0.04);border-radius:6px;"><div style="width:18px;height:18px;background:rgba(192,39,45,0.2);border:2px solid var(--red-bright);border-radius:4px;flex-shrink:0;"></div><div style="height:8px;background:rgba(255,255,255,0.15);border-radius:3px;flex:1;opacity:0.5;"></div></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(192,39,45,0.08);border-radius:6px;border:1px solid rgba(192,39,45,0.2);"><div style="width:18px;height:18px;border:2px solid rgba(192,39,45,0.5);border-radius:4px;flex-shrink:0;"></div><div style="height:8px;background:rgba(255,255,255,0.2);border-radius:3px;flex:1;"></div></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(255,255,255,0.04);border-radius:6px;"><div style="width:18px;height:18px;border:2px solid rgba(255,255,255,0.15);border-radius:4px;flex-shrink:0;"></div><div style="height:8px;background:rgba(255,255,255,0.1);border-radius:3px;flex:1;"></div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Feature 6: Log Progress -->
     <section class="features-row dark-bg">
       <div class="feature-row-block flip">
         <div class="feature-row-text">
           <div class="feature-num">06</div>
           <h3>Log Progress</h3>
-          <p>Clients can log what they have accomplished at any time. The advisor responds with updated recommendations based on their progress, keeps the momentum going, and adjusts its strategy as the business evolves.</p>
+          <p>Clients can log what they have accomplished at any time. The advisor responds with updated recommendations based on their progress and adjusts its strategy as the business evolves.</p>
           <ul class="bullet-list mt-1">
             <li>Log progress any time, in any session</li>
             <li>Advisor responds with updated strategy</li>
@@ -528,27 +226,13 @@
         </div>
         <div class="feature-row-visual">
           <div class="vis-label">Progress Log</div>
-          <div class="chat-bubble user" style="margin-left:10%;">
-            <div class="bubble-line user-line" style="width:100%;"></div>
-            <div class="bubble-line user-line" style="width:80%;margin:0;"></div>
-          </div>
-          <div class="chat-bubble ai">
-            <div class="bubble-line ai-line" style="width:100%;"></div>
-            <div class="bubble-line ai-line" style="width:95%;"></div>
-            <div class="bubble-line ai-line" style="width:75%;"></div>
-            <div class="bubble-line ai-line" style="width:85%;margin:0;"></div>
-          </div>
-          <div style="margin-top:10px;background:rgba(192,39,45,0.1);border-radius:6px;padding:0.75rem;border:1px solid rgba(192,39,45,0.2);">
-            <div style="height:7px;background:rgba(192,39,45,0.4);border-radius:3px;width:50%;margin-bottom:6px;"></div>
-            <div style="height:7px;background:rgba(255,255,255,0.1);border-radius:3px;width:100%;"></div>
-          </div>
+          <div class="chat-bubble user" style="margin-left:10%;"><div class="bubble-line user-line" style="width:100%;"></div><div class="bubble-line user-line" style="width:80%;margin:0;"></div></div>
+          <div class="chat-bubble ai"><div class="bubble-line ai-line" style="width:100%;"></div><div class="bubble-line ai-line" style="width:95%;"></div><div class="bubble-line ai-line" style="width:75%;"></div><div class="bubble-line ai-line" style="width:85%;margin:0;"></div></div>
         </div>
       </div>
     </section>
+  </div>
 
-  </div><!-- end #features -->
-
-  <!-- CLIENT ONBOARDING -->
   <section class="onboarding-section">
     <div class="container text-center" style="max-width:700px;margin-bottom:0;">
       <span class="section-label">Getting Started</span>
@@ -556,41 +240,24 @@
       <p style="color:var(--gray-mid);">New clients receive a unique invite code. From activation to personalized advising takes just minutes.</p>
     </div>
     <div class="onboarding-steps">
-      <div class="onboarding-step">
-        <div class="step-num">1</div>
-        <h4>Receive Your Invite Code</h4>
-        <p>A unique code is issued through the Ruby Wall admin panel. No public sign-ups.</p>
-      </div>
-      <div class="onboarding-step">
-        <div class="step-num">2</div>
-        <h4>Activate Your Account</h4>
-        <p>Enter the invite code, choose a display name, and create your personal password.</p>
-      </div>
-      <div class="onboarding-step">
-        <div class="step-num">3</div>
-        <h4>Quick Onboarding</h4>
-        <p>Nexus learns your business type, goal, and experience level — and tailors everything from there.</p>
-      </div>
-      <div class="onboarding-step">
-        <div class="step-num">4</div>
-        <h4>Start Advising</h4>
-        <p>Your advisor is ready. Ask anything. Every return visit only needs your password.</p>
-      </div>
+      <div class="onboarding-step"><div class="step-num">1</div><h4>Receive Your Invite Code</h4><p>A unique code is issued through the Ruby Wall admin panel. No public sign-ups.</p></div>
+      <div class="onboarding-step"><div class="step-num">2</div><h4>Activate Your Account</h4><p>Enter the invite code, choose a display name, and create your personal password.</p></div>
+      <div class="onboarding-step"><div class="step-num">3</div><h4>Quick Onboarding</h4><p>Nexus learns your business type, goal, and experience level — and tailors everything from there.</p></div>
+      <div class="onboarding-step"><div class="step-num">4</div><h4>Start Advising</h4><p>Your advisor is ready. Ask anything. Every return visit only needs your password.</p></div>
     </div>
   </section>
 
-  <!-- ACCESS TIERS -->
   <section class="access-tiers">
     <div class="container text-center" style="max-width:700px;margin-bottom:0;">
       <span class="section-label">Access Tiers</span>
       <h2 style="color:var(--light-1);margin-bottom:1rem;">Two ways to experience Nexus AI.</h2>
-      <p style="color:var(--gray-mid);">Access is managed entirely through the Ruby Wall admin panel. Every account begins with a unique invite code.</p>
+      <p style="color:var(--gray-mid);">Access is managed entirely through the Ruby Wall admin panel.</p>
     </div>
     <div class="tiers-grid">
       <div class="tier-card primary">
         <div class="tier-icon red">🔓</div>
         <h3>Paid Client</h3>
-        <p>Full unlimited access to every feature in the platform — advising, memory, history, growth plans, action items, and progress logging.</p>
+        <p>Full unlimited access to every feature in the platform.</p>
         <div class="tier-detail"><div class="tier-detail-dot"></div> Unlimited messages</div>
         <div class="tier-detail"><div class="tier-detail-dot"></div> Full conversation memory</div>
         <div class="tier-detail"><div class="tier-detail-dot"></div> 30 &amp; 90-day growth plans</div>
@@ -601,7 +268,7 @@
       <div class="tier-card">
         <div class="tier-icon gray">🔍</div>
         <h3>Free Trial</h3>
-        <p>Experience the full Nexus AI platform with a 10-message trial — no commitment required before deciding.</p>
+        <p>Experience the full Nexus AI platform with a 10-message trial — no commitment required.</p>
         <div class="tier-detail"><div class="tier-detail-dot"></div> 10 messages included</div>
         <div class="tier-detail"><div class="tier-detail-dot"></div> Full platform access</div>
         <div class="tier-detail"><div class="tier-detail-dot"></div> No credit card required</div>
@@ -609,7 +276,6 @@
     </div>
   </section>
 
-  <!-- WHO IT'S FOR -->
   <section class="audience-section">
     <div class="container">
       <div class="section-header">
@@ -626,7 +292,6 @@
     </div>
   </section>
 
-  <!-- TECH -->
   <section class="tech-section">
     <div class="container">
       <span class="section-label">Technology</span>
@@ -643,24 +308,22 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta-section">
     <div class="cta-inner">
       <span class="section-label">Interested in Nexus AI?</span>
       <h2>Get personalized business advising for your team.</h2>
-      <p>Nexus AI is available as a monthly subscription add-on to Ruby Wall web design and digital services clients. Bundled packages are also available. Pricing is available upon request.</p>
+      <p>Nexus AI is available as a monthly subscription add-on to Ruby Wall web design and digital services clients. Pricing is available upon request.</p>
       <div class="cta-actions">
         <a href="index.html" class="btn btn-outline">← Back to Home</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="images/logo-rwv.png.PNG" alt="Ruby Wall Ventures" />
+          <img src="images:logo-rwv.PNG" alt="Ruby Wall Ventures" />
           <span class="footer-brand-name">Ruby Wall Ventures</span>
         </div>
         <div class="footer-links-group">
@@ -691,6 +354,5 @@
       document.getElementById('mobileMenu').classList.toggle('open');
     }
   </script>
-
 </body>
 </html>
