@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LUMEN — AI Content Creation Platform | Ruby Wall Ventures</title>
-  <meta name="description" content="LUMEN is an AI-powered content creation platform built for small and local businesses. Five specialized tools for $19.99/month." />
+  <title>Nexus AI — AI Business Advisor | Ruby Wall Ventures</title>
+  <meta name="description" content="Nexus AI is a full-featured AI-powered business advisor platform built by Ruby Wall." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
@@ -21,39 +21,50 @@
     .tech-tag { background: rgba(0,0,0,0.06) !important; color: #444 !important; border-color: rgba(0,0,0,0.12) !important; }
   </style>
   <style>
-    .tools-section { padding: 6rem 2rem; background: var(--light-1); }
-    .tools-section.alt { background: var(--light-2); }
-    .tool-block { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 5rem; align-items: center; }
-    .tool-block.reverse { direction: rtl; }
-    .tool-block.reverse > * { direction: ltr; }
-    .tool-number { font-family: 'Montserrat', sans-serif; font-size: 5rem; font-weight: 800; color: rgba(192,39,45,0.08); line-height: 1; margin-bottom: -1.5rem; }
-    .tool-content h3 { color: var(--dark-2); font-size: 1.75rem; margin-bottom: 1rem; }
-    .tool-content p { color: var(--gray-mid); margin-bottom: 1rem; }
-    .tool-styles { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
-    .style-chip { background: rgba(192,39,45,0.08); color: var(--red-bright); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; font-family: 'Montserrat', sans-serif; letter-spacing: 0.04em; }
-    .tool-visual { background: var(--dark-2); border-radius: var(--radius-md); padding: 2.5rem; position: relative; overflow: hidden; }
-    .tool-visual::before { content: ''; position: absolute; top: 0; right: 0; width: 120px; height: 120px; background: radial-gradient(circle, rgba(192,39,45,0.2) 0%, transparent 70%); }
-    .tool-visual-label { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red-bright); margin-bottom: 1.25rem; }
-    .mock-post { background: var(--dark-3); border-radius: var(--radius-sm); padding: 1.25rem; border: 1px solid var(--border-dark); }
-    .mock-post-line { height: 10px; background: rgba(255,255,255,0.08); border-radius: 4px; margin-bottom: 8px; }
-    .mock-post-line.short { width: 70%; }
-    .mock-post-line.med { width: 90%; }
-    .mock-post-line.full { width: 100%; }
-    .mock-coaching { margin-top: 1rem; background: rgba(192,39,45,0.1); border-left: 3px solid var(--red-bright); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1rem; }
-    .mock-coaching-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red-bright); margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif; }
-    .mock-coaching-line { height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; margin-bottom: 6px; }
-    .mock-coaching-line.short { width: 65%; }
-    .what-different { background: var(--dark-1); padding: 6rem 2rem; }
-    .what-different-inner { max-width: var(--max-width); margin: 0 auto; }
-    .what-different h2 { color: var(--light-1); }
-    .differentiators { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
-    .differentiator { background: var(--dark-3); border-radius: var(--radius-sm); padding: 1.75rem; border: 1px solid var(--border-dark); border-left: 3px solid var(--red-bright); }
-    .differentiator h4 { color: var(--light-1); margin-bottom: 0.5rem; font-size: 1rem; }
-    .differentiator p { color: var(--gray-mid); font-size: 0.9rem; line-height: 1.65; }
+    .features-row { padding: 6rem 2rem; background: var(--light-1); }
+    .features-row.dark-bg { background: var(--dark-2); }
+    .feature-row-block { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .feature-row-block.flip { direction: rtl; }
+    .feature-row-block.flip > * { direction: ltr; }
+    .feature-num { font-family: 'Montserrat', sans-serif; font-size: 4.5rem; font-weight: 800; color: rgba(192,39,45,0.1); line-height: 1; margin-bottom: -1.25rem; }
+    .feature-row-text h3 { font-size: 1.65rem; margin-bottom: 1rem; }
+    .feature-row-text p { margin-bottom: 0.9rem; }
+    .dark-bg .feature-row-text h3 { color: var(--light-1); }
+    .dark-bg .feature-row-text p { color: var(--gray-light); }
+    .dark-bg .feature-row-text .bullet-list li { color: var(--gray-light); }
+    .feature-row-visual { background: var(--dark-3); border-radius: var(--radius-md); padding: 2rem; border: 1px solid var(--border-dark); }
+    .vis-label { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red-bright); margin-bottom: 1rem; }
+    .chat-bubble { border-radius: 12px; padding: 0.75rem 1rem; margin-bottom: 8px; }
+    .chat-bubble.user { background: rgba(192,39,45,0.15); border-bottom-right-radius: 4px; margin-left: 20%; }
+    .chat-bubble.ai { background: rgba(255,255,255,0.05); border: 1px solid var(--border-dark); border-bottom-left-radius: 4px; margin-right: 10%; }
+    .bubble-line { height: 8px; border-radius: 4px; margin-bottom: 5px; }
+    .bubble-line.user-line { background: rgba(192,39,45,0.4); }
+    .bubble-line.ai-line { background: rgba(255,255,255,0.1); }
+    .memory-chip { background: rgba(192,39,45,0.1); border: 1px solid rgba(192,39,45,0.25); border-radius: 6px; padding: 0.6rem 1rem; margin-top: 6px; }
+    .memory-chip-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red-bright); margin-bottom: 4px; font-family: 'Montserrat', sans-serif; }
+    .memory-chip-line { height: 7px; background: rgba(255,255,255,0.08); border-radius: 3px; margin-bottom: 4px; }
+    .access-tiers { padding: 6rem 2rem; background: var(--dark-1); }
+    .tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 720px; margin: 3rem auto 0; }
+    .tier-card { background: var(--dark-3); border-radius: var(--radius-md); padding: 2.5rem 2rem; border: 1px solid var(--border-dark); transition: all var(--transition); }
+    .tier-card.primary { border-color: var(--red-bright); box-shadow: 0 0 0 1px rgba(192,39,45,0.2), 0 8px 32px rgba(0,0,0,0.3); }
+    .tier-icon { width: 44px; height: 44px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; font-size: 1.25rem; }
+    .tier-icon.red { background: rgba(192,39,45,0.15); }
+    .tier-icon.gray { background: rgba(255,255,255,0.06); }
+    .tier-card h3 { color: var(--light-1); font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .tier-card p { color: var(--gray-mid); font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+    .tier-detail { display: flex; align-items: center; gap: 0.6rem; color: var(--gray-light); font-size: 0.88rem; padding: 0.4rem 0; border-bottom: 1px solid var(--border-dark); }
+    .tier-detail:last-child { border-bottom: none; }
+    .tier-detail-dot { width: 6px; height: 6px; background: var(--red-bright); border-radius: 50%; flex-shrink: 0; }
+    .onboarding-section { padding: 5rem 2rem; background: var(--dark-4); }
+    .onboarding-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: var(--max-width); margin: 3rem auto 0; }
+    .onboarding-step { text-align: center; }
+    .step-num { width: 48px; height: 48px; background: var(--red-bright); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--light-1); margin: 0 auto 1rem; }
+    .onboarding-step h4 { color: var(--light-1); font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .onboarding-step p { color: var(--gray-mid); font-size: 0.85rem; line-height: 1.6; }
     @media (max-width: 860px) {
-      .tool-block { grid-template-columns: 1fr; gap: 2.5rem; }
-      .tool-block.reverse { direction: ltr; }
-      .tool-visual { display: none; }
+      .feature-row-block { grid-template-columns: 1fr; gap: 2.5rem; }
+      .feature-row-block.flip { direction: ltr; }
+      .feature-row-visual { display: none; }
     }
   </style>
 </head>
@@ -63,8 +74,8 @@
       <a class="nav-logo" href="index.html"><img src="images/logo-rwv.PNG" alt="Ruby Wall Ventures" /></a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="lumen.html" class="active">LUMEN</a></li>
-        <li><a href="nexus.html">Nexus AI</a></li>
+        <li><a href="lumen.html">LUMEN</a></li>
+        <li><a href="nexus.html" class="active">Nexus AI</a></li>
         <li><a href="meridian.html">Meridian</a></li>
       </ul>
       <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
@@ -75,166 +86,204 @@
   </nav>
 
   <section class="hero-product">
-    <img src="images/logo-lumen.PNG" alt="LUMEN by Ruby Wall" class="hero-product-logo" />
-    <p class="hero-product-powered">By Ruby Wall</p>
-    <h1>AI-Powered Content Creation</h1>
-    <p class="hero-product-tagline">Everything a local business needs to show up online — five intelligent tools, one platform, one price.</p>
+    <img src="images/logo-nexus.PNG" alt="Nexus AI by Ruby Wall" class="hero-product-logo" />
+    <p class="hero-product-powered">Powered by Ruby Wall</p>
+    <h1>Your AI Business Advisor</h1>
+    <p class="hero-product-tagline">A personal business consultant available 24 hours a day, 7 days a week — powered by advanced AI and built specifically for local business owners.</p>
     <div class="hero-product-meta">
-      <span class="price-badge">$19.99 / month</span>
       <span class="tech-tag">Powered by Claude AI</span>
-      <span class="tech-tag">Cloudflare + GitHub Pages</span>
+      <span class="tech-tag">Cloudflare Workers</span>
+      <span class="tech-tag">Mobile-First</span>
     </div>
-    <a href="#tools" class="btn btn-primary">See What LUMEN Does</a>
+    <a href="#features" class="btn btn-primary">Explore Nexus AI</a>
   </section>
 
-  <section class="features-section gray" style="padding: 4rem 2rem;">
+  <section class="features-section gray" style="padding:4rem 2rem;">
     <div class="container text-center" style="max-width:760px;">
-      <span class="section-label">What Is LUMEN?</span>
-      <h2 style="color:var(--dark-2); margin-bottom:1.25rem;">Not just a caption generator.</h2>
-      <p style="color:var(--gray-mid);">LUMEN is a complete content intelligence platform with five specialized tools built specifically for local business owners — restaurants, barbershops, gyms, salons, retail shops, and service businesses.</p>
-      <p style="color:var(--gray-mid); margin-top:1rem;">Every tool pulls from your Brand Voice profile automatically. Nothing ever sounds generic.</p>
+      <span class="section-label">What Is Nexus AI?</span>
+      <h2 style="color:var(--dark-2);margin-bottom:1.25rem;">A seasoned business mentor in your pocket.</h2>
+      <p style="color:var(--gray-mid);">Nexus AI is a full-featured AI-powered business advisor platform built and operated by Ruby Wall. Whether you are just starting out, trying to grow your customer base, or scaling your revenue — Nexus AI delivers personalized, actionable advice tailored specifically to your business, your goals, and your current stage.</p>
+      <p style="color:var(--gray-mid);margin-top:1rem;">Unlike a one-size-fits-all chatbot, Nexus AI knows your business from the first conversation and remembers everything going forward.</p>
     </div>
   </section>
 
-  <div id="tools">
-    <section class="tools-section">
-      <div class="tool-block">
-        <div class="tool-content">
-          <div class="tool-number">01</div>
-          <h3>Content Studio</h3>
-          <p>Answer three simple questions about your business and LUMEN generates scroll-stopping social media posts for Instagram, Facebook, and TikTok in seconds.</p>
-          <p>Every post is tailored to your brand voice, your audience, and your platform. Post coaching cards appear beneath every post.</p>
+  <div id="features">
+    <section class="features-row">
+      <div class="feature-row-block">
+        <div class="feature-row-text">
+          <div class="feature-num">01</div>
+          <h3>Personalized Business Advising</h3>
+          <p>Every client goes through a quick onboarding process that captures their business type, primary goal, and experience level. From that moment forward, every conversation is tailored to their specific situation.</p>
+          <p>Nexus AI is built specifically for small and local businesses in the Katy and Houston area.</p>
+        </div>
+        <div class="feature-row-visual">
+          <div class="vis-label">Nexus AI Advisor</div>
+          <div class="chat-bubble user"><div class="bubble-line user-line" style="width:80%;"></div><div class="bubble-line user-line" style="width:60%;margin:0;"></div></div>
+          <div class="chat-bubble ai"><div class="bubble-line ai-line" style="width:100%;"></div><div class="bubble-line ai-line" style="width:90%;"></div><div class="bubble-line ai-line" style="width:75%;margin:0;"></div></div>
+          <div class="chat-bubble user"><div class="bubble-line user-line" style="width:70%;margin:0;"></div></div>
+          <div class="chat-bubble ai"><div class="bubble-line ai-line" style="width:100%;"></div><div class="bubble-line ai-line" style="width:85%;"></div><div class="bubble-line ai-line" style="width:60%;margin:0;"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-row dark-bg">
+      <div class="feature-row-block flip">
+        <div class="feature-row-text">
+          <div class="feature-num">02</div>
+          <h3>Conversation Memory</h3>
+          <p>Nexus AI remembers. After every session, it automatically extracts and saves key facts, decisions, challenges, and action items from the conversation.</p>
+          <p>When clients return, the advisor already knows who they are, what they have been working on, and where they left off.</p>
           <ul class="bullet-list mt-1">
-            <li>Instagram, Facebook &amp; TikTok ready</li>
-            <li>Brand-voice matched content every time</li>
-            <li>Post coaching card with every generation</li>
-            <li>Optimal posting time recommendations</li>
+            <li>Automatically extracts key facts after each session</li>
+            <li>Saves decisions, challenges, and action items</li>
+            <li>Context carries forward into every future conversation</li>
           </ul>
         </div>
-        <div class="tool-visual">
-          <div class="tool-visual-label">Content Studio Preview</div>
-          <div class="mock-post">
-            <div class="mock-post-line full"></div><div class="mock-post-line med"></div><div class="mock-post-line short"></div><div class="mock-post-line full"></div><div class="mock-post-line med"></div>
-          </div>
-          <div class="mock-coaching">
-            <div class="mock-coaching-title">Post Coaching Card</div>
-            <div class="mock-coaching-line full"></div><div class="mock-coaching-line med"></div><div class="mock-coaching-line short"></div>
+        <div class="feature-row-visual">
+          <div class="vis-label">Session Memory</div>
+          <div class="memory-chip"><div class="memory-chip-title">Business Profile</div><div class="memory-chip-line" style="width:90%;"></div><div class="memory-chip-line" style="width:70%;"></div></div>
+          <div class="memory-chip" style="margin-top:10px;"><div class="memory-chip-title">Last Session</div><div class="memory-chip-line" style="width:100%;"></div><div class="memory-chip-line" style="width:80%;"></div><div class="memory-chip-line" style="width:60%;margin-bottom:0;"></div></div>
+          <div class="memory-chip" style="margin-top:10px;"><div class="memory-chip-title">Open Action Items</div><div class="memory-chip-line" style="width:85%;"></div><div class="memory-chip-line" style="width:65%;margin-bottom:0;"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-row">
+      <div class="feature-row-block">
+        <div class="feature-row-text">
+          <div class="feature-num">03</div>
+          <h3>Chat History</h3>
+          <p>Clients can start new conversations while keeping all past chats accessible in a sidebar. Every conversation is saved, searchable, and organized by date.</p>
+          <ul class="bullet-list mt-1">
+            <li>All conversations saved permanently</li>
+            <li>Organized and searchable by date</li>
+            <li>Start a new chat without losing previous sessions</li>
+          </ul>
+        </div>
+        <div class="feature-row-visual">
+          <div class="vis-label">Chat Sidebar</div>
+          <div style="display:flex;gap:12px;height:160px;">
+            <div style="width:38%;border-right:1px solid var(--border-dark);padding-right:12px;display:flex;flex-direction:column;gap:8px;">
+              <div style="height:8px;background:rgba(192,39,45,0.3);border-radius:3px;width:70%;"></div>
+              <div style="background:rgba(192,39,45,0.12);border-radius:4px;padding:6px 8px;border:1px solid rgba(192,39,45,0.2);"><div style="height:6px;background:rgba(255,255,255,0.15);border-radius:3px;margin-bottom:4px;"></div><div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;width:60%;"></div></div>
+              <div style="padding:6px 8px;"><div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;margin-bottom:4px;"></div><div style="height:6px;background:rgba(255,255,255,0.05);border-radius:3px;width:70%;"></div></div>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;">
+              <div class="chat-bubble ai" style="margin-right:0;"><div class="bubble-line ai-line" style="width:100%;"></div><div class="bubble-line ai-line" style="width:80%;margin:0;"></div></div>
+              <div class="chat-bubble user" style="margin-left:15%;"><div class="bubble-line user-line" style="width:70%;margin:0;"></div></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="tools-section alt">
-      <div class="tool-block reverse">
-        <div class="tool-content">
-          <div class="tool-number">02</div>
-          <h3>Viral Hook Generator</h3>
-          <p>Generate eight scroll-stopping opening lines in six different styles. Built for business owners who know what they want to say but struggle with how to start.</p>
-          <div class="tool-styles">
-            <span class="style-chip">Curiosity</span><span class="style-chip">Bold Claim</span><span class="style-chip">Story</span><span class="style-chip">Question</span><span class="style-chip">Controversial</span><span class="style-chip">Local Pride</span>
-          </div>
+    <section class="features-row dark-bg">
+      <div class="feature-row-block flip">
+        <div class="feature-row-text">
+          <div class="feature-num">04</div>
+          <h3>30 &amp; 90-Day Growth Plans</h3>
+          <p>Generate a fully personalized growth plan at any time. Answer two questions and Nexus AI builds a structured, phase-by-phase action plan with specific tasks tailored to your exact business type and goal.</p>
+          <ul class="bullet-list mt-1">
+            <li>30-day and 90-day plan options</li>
+            <li>Structured phases with specific tasks</li>
+            <li>Saved permanently with checkable items</li>
+            <li>Up to three plans side by side for comparison</li>
+          </ul>
         </div>
-        <div class="tool-visual">
-          <div class="tool-visual-label">Hook Generator Preview</div>
+        <div class="feature-row-visual">
+          <div class="vis-label">30-Day Growth Plan</div>
           <div style="display:flex;flex-direction:column;gap:8px;">
-            <div class="mock-post" style="padding:0.85rem;"><div class="mock-post-line med"></div></div>
-            <div class="mock-post" style="padding:0.85rem;"><div class="mock-post-line full"></div></div>
-            <div class="mock-post" style="padding:0.85rem;"><div class="mock-post-line short"></div></div>
-            <div class="mock-post" style="padding:0.85rem;"><div class="mock-post-line med"></div></div>
+            <div style="background:rgba(192,39,45,0.1);border-left:3px solid var(--red-bright);padding:0.85rem;border-radius:0 6px 6px 0;"><div style="height:7px;background:rgba(192,39,45,0.5);border-radius:3px;width:40%;margin-bottom:6px;"></div><div style="height:7px;background:rgba(255,255,255,0.1);border-radius:3px;width:90%;margin-bottom:4px;"></div><div style="height:7px;background:rgba(255,255,255,0.1);border-radius:3px;width:70%;"></div></div>
+            <div style="background:rgba(255,255,255,0.04);border-left:3px solid rgba(255,255,255,0.15);padding:0.85rem;border-radius:0 6px 6px 0;"><div style="height:7px;background:rgba(255,255,255,0.15);border-radius:3px;width:35%;margin-bottom:6px;"></div><div style="height:7px;background:rgba(255,255,255,0.08);border-radius:3px;width:100%;margin-bottom:4px;"></div><div style="height:7px;background:rgba(255,255,255,0.08);border-radius:3px;width:80%;"></div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="tools-section">
-      <div class="tool-block">
-        <div class="tool-content">
-          <div class="tool-number">03</div>
-          <h3>Brand Voice Trainer</h3>
-          <p>A ten-question onboarding experience that teaches LUMEN exactly how your business sounds. Once trained, every piece of content automatically reflects your personality and communication style.</p>
+    <section class="features-row">
+      <div class="feature-row-block">
+        <div class="feature-row-text">
+          <div class="feature-num">05</div>
+          <h3>Action Item Extractor</h3>
+          <p>After any advisory conversation, tap one button and Nexus AI automatically extracts every task, recommendation, and to-do from the chat into a personal checklist.</p>
           <ul class="bullet-list mt-1">
-            <li>10-question voice onboarding</li>
-            <li>Applied automatically across all five tools</li>
-            <li>Unique to every business</li>
-            <li>Stored locally per user account</li>
+            <li>One-tap extraction from any conversation</li>
+            <li>Organized personal checklist</li>
+            <li>Check off items as you complete them</li>
+            <li>Clear completed items when ready</li>
           </ul>
         </div>
-        <div class="tool-visual">
-          <div class="tool-visual-label">Brand Voice Setup</div>
-          <div style="display:flex;flex-direction:column;gap:1rem;">
-            <div style="background:rgba(192,39,45,0.15);border-radius:6px;padding:1rem;"><div style="height:8px;background:rgba(192,39,45,0.4);border-radius:4px;width:60%;margin-bottom:6px;"></div><div class="mock-post-line med" style="margin:0;"></div></div>
-            <div style="background:var(--dark-3);border-radius:6px;padding:1rem;border:1px solid var(--border-dark);"><div class="mock-post-line full" style="margin-bottom:6px;"></div><div class="mock-post-line short"></div></div>
+        <div class="feature-row-visual">
+          <div class="vis-label">Action Checklist</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(255,255,255,0.04);border-radius:6px;"><div style="width:18px;height:18px;background:rgba(192,39,45,0.2);border:2px solid var(--red-bright);border-radius:4px;flex-shrink:0;"></div><div style="height:8px;background:rgba(255,255,255,0.15);border-radius:3px;flex:1;opacity:0.5;"></div></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(192,39,45,0.08);border-radius:6px;border:1px solid rgba(192,39,45,0.2);"><div style="width:18px;height:18px;border:2px solid rgba(192,39,45,0.5);border-radius:4px;flex-shrink:0;"></div><div style="height:8px;background:rgba(255,255,255,0.2);border-radius:3px;flex:1;"></div></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(255,255,255,0.04);border-radius:6px;"><div style="width:18px;height:18px;border:2px solid rgba(255,255,255,0.15);border-radius:4px;flex-shrink:0;"></div><div style="height:8px;background:rgba(255,255,255,0.1);border-radius:3px;flex:1;"></div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="tools-section alt">
-      <div class="tool-block reverse">
-        <div class="tool-content">
-          <div class="tool-number">04</div>
-          <h3>Ad Campaign Builder</h3>
-          <p>Generate complete advertising campaigns for Facebook, Instagram, Google, and TikTok — fully structured with campaign objective, target audience, budget recommendation, and three A/B test variations.</p>
-          <div class="tool-styles" style="margin-top:1.25rem;">
-            <span class="style-chip">Facebook</span><span class="style-chip">Instagram</span><span class="style-chip">Google</span><span class="style-chip">TikTok</span>
-          </div>
-        </div>
-        <div class="tool-visual">
-          <div class="tool-visual-label">Ad Campaign Structure</div>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="background:rgba(192,39,45,0.1);border-left:3px solid var(--red-bright);padding:0.85rem;border-radius:0 6px 6px 0;"><div style="height:7px;background:rgba(192,39,45,0.4);border-radius:4px;width:40%;margin-bottom:6px;"></div><div class="mock-post-line full" style="margin:0;"></div></div>
-            <div class="mock-post" style="padding:0.85rem;"><div class="mock-post-line short" style="margin-bottom:6px;"></div><div class="mock-post-line med"></div></div>
-            <div class="mock-post" style="padding:0.85rem;"><div class="mock-post-line med" style="margin-bottom:6px;"></div><div class="mock-post-line full"></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="tools-section">
-      <div class="tool-block">
-        <div class="tool-content">
-          <div class="tool-number">05</div>
-          <h3>Script Writer</h3>
-          <p>Professional scripts for TikTok, Instagram Reels, YouTube videos, and podcast episodes. Short, medium, or long format. One-click export as a formatted text file.</p>
+    <section class="features-row dark-bg">
+      <div class="feature-row-block flip">
+        <div class="feature-row-text">
+          <div class="feature-num">06</div>
+          <h3>Log Progress</h3>
+          <p>Clients can log what they have accomplished at any time. The advisor responds with updated recommendations based on their progress and adjusts its strategy as the business evolves.</p>
           <ul class="bullet-list mt-1">
-            <li>TikTok &amp; Instagram Reels scripts</li>
-            <li>YouTube video scripts</li>
-            <li>Podcast episode scripts</li>
-            <li>Short, medium, and long format</li>
-            <li>One-click export to text file</li>
+            <li>Log progress any time, in any session</li>
+            <li>Advisor responds with updated strategy</li>
+            <li>Adaptive recommendations as your business grows</li>
           </ul>
         </div>
-        <div class="tool-visual">
-          <div class="tool-visual-label">Script Output</div>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="background:rgba(255,255,255,0.04);border-radius:6px;padding:0.85rem;border:1px solid var(--border-dark);"><div style="height:7px;background:rgba(192,39,45,0.5);border-radius:4px;width:35%;margin-bottom:8px;"></div><div class="mock-post-line full" style="margin-bottom:5px;"></div><div class="mock-post-line med"></div></div>
-            <div style="background:rgba(255,255,255,0.04);border-radius:6px;padding:0.85rem;border:1px solid var(--border-dark);"><div style="height:7px;background:rgba(192,39,45,0.5);border-radius:4px;width:25%;margin-bottom:8px;"></div><div class="mock-post-line med" style="margin-bottom:5px;"></div><div class="mock-post-line full" style="margin-bottom:5px;"></div><div class="mock-post-line short"></div></div>
-          </div>
+        <div class="feature-row-visual">
+          <div class="vis-label">Progress Log</div>
+          <div class="chat-bubble user" style="margin-left:10%;"><div class="bubble-line user-line" style="width:100%;"></div><div class="bubble-line user-line" style="width:80%;margin:0;"></div></div>
+          <div class="chat-bubble ai"><div class="bubble-line ai-line" style="width:100%;"></div><div class="bubble-line ai-line" style="width:95%;"></div><div class="bubble-line ai-line" style="width:75%;"></div><div class="bubble-line ai-line" style="width:85%;margin:0;"></div></div>
         </div>
       </div>
     </section>
   </div>
 
-  <section style="padding:4rem 2rem;background:var(--dark-4);">
-    <div class="container text-center" style="max-width:700px;">
-      <span class="section-label">Caption-to-Strategy</span>
-      <h2 style="color:var(--light-1);margin-bottom:1.25rem;">Every session becomes a growth strategy.</h2>
-      <p style="color:var(--gray-light);">After every content session, LUMEN automatically generates a full weekly posting schedule, optimal posting times, content mix recommendations, and a personalized growth insight.</p>
+  <section class="onboarding-section">
+    <div class="container text-center" style="max-width:700px;margin-bottom:0;">
+      <span class="section-label">Getting Started</span>
+      <h2 style="color:var(--light-1);margin-bottom:1rem;">Simple onboarding, instant personalization.</h2>
+      <p style="color:var(--gray-mid);">New clients receive a unique invite code. From activation to personalized advising takes just minutes.</p>
+    </div>
+    <div class="onboarding-steps">
+      <div class="onboarding-step"><div class="step-num">1</div><h4>Receive Your Invite Code</h4><p>A unique code is issued through the Ruby Wall admin panel. No public sign-ups.</p></div>
+      <div class="onboarding-step"><div class="step-num">2</div><h4>Activate Your Account</h4><p>Enter the invite code, choose a display name, and create your personal password.</p></div>
+      <div class="onboarding-step"><div class="step-num">3</div><h4>Quick Onboarding</h4><p>Nexus learns your business type, goal, and experience level — and tailors everything from there.</p></div>
+      <div class="onboarding-step"><div class="step-num">4</div><h4>Start Advising</h4><p>Your advisor is ready. Ask anything. Every return visit only needs your password.</p></div>
     </div>
   </section>
 
-  <section class="what-different">
-    <div class="what-different-inner">
-      <span class="section-label">What Makes LUMEN Different</span>
-      <h2>Built from the ground up for local business.</h2>
-      <div class="divider"></div>
-      <div class="differentiators">
-        <div class="differentiator"><h4>Brand Voice Applied Everywhere</h4><p>Every tool pulls from your Brand Voice profile automatically. Nothing ever sounds generic.</p></div>
-        <div class="differentiator"><h4>Caption-to-Strategy Built In</h4><p>After every session, LUMEN generates a full weekly posting schedule, optimal times, and a personalized growth insight.</p></div>
-        <div class="differentiator"><h4>100% Original Content</h4><p>LUMEN never references other brands by name. Every word is original and owned entirely by the client.</p></div>
-        <div class="differentiator"><h4>Five Tools, One Price</h4><p>Content Studio, Hook Generator, Brand Voice Trainer, Ad Campaign Builder, and Script Writer — all included for $19.99 a month.</p></div>
-        <div class="differentiator"><h4>Invite-Only Access</h4><p>Clean, dark interface with invite-only client access and brand voice memory stored locally per user account.</p></div>
-        <div class="differentiator"><h4>Secure Architecture</h4><p>Powered by Claude AI through a secure Cloudflare Worker backend. API credentials are never exposed to the client.</p></div>
+  <section class="access-tiers">
+    <div class="container text-center" style="max-width:700px;margin-bottom:0;">
+      <span class="section-label">Access Tiers</span>
+      <h2 style="color:var(--light-1);margin-bottom:1rem;">Two ways to experience Nexus AI.</h2>
+      <p style="color:var(--gray-mid);">Access is managed entirely through the Ruby Wall admin panel.</p>
+    </div>
+    <div class="tiers-grid">
+      <div class="tier-card primary">
+        <div class="tier-icon red">🔓</div>
+        <h3>Paid Client</h3>
+        <p>Full unlimited access to every feature in the platform.</p>
+        <div class="tier-detail"><div class="tier-detail-dot"></div> Unlimited messages</div>
+        <div class="tier-detail"><div class="tier-detail-dot"></div> Full conversation memory</div>
+        <div class="tier-detail"><div class="tier-detail-dot"></div> 30 &amp; 90-day growth plans</div>
+        <div class="tier-detail"><div class="tier-detail-dot"></div> Action item extractor</div>
+        <div class="tier-detail"><div class="tier-detail-dot"></div> Progress logging</div>
+        <div class="tier-detail"><div class="tier-detail-dot"></div> Invite code + custom password</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-icon gray">🔍</div>
+        <h3>Free Trial</h3>
+        <p>Experience the full Nexus AI platform with a 10-message trial — no commitment required.</p>
+        <div class="tier-detail"><div class="tier-detail-dot"></div> 10 messages included</div>
+        <div class="tier-detail"><div class="tier-detail-dot"></div> Full platform access</div>
+        <div class="tier-detail"><div class="tier-detail-dot"></div> No credit card required</div>
       </div>
     </div>
   </section>
@@ -242,41 +291,42 @@
   <section class="audience-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Who LUMEN Is For</span>
-        <h2 style="color:var(--dark-2);">Local businesses ready to show up online.</h2>
-        <p>LUMEN was built for business owners who know they need to be active on social media but don't have the time or budget to hire a full marketing team.</p>
+        <span class="section-label">Who Nexus AI Is For</span>
+        <h2 style="color:var(--dark-2);">Built for local businesses ready to grow.</h2>
+        <p>Expert-level business advice without the cost of hiring a consultant.</p>
       </div>
       <div class="audience-grid">
-        <div class="audience-item">Restaurants &amp; food businesses looking to build a local following</div>
-        <div class="audience-item">Barbershops &amp; salons wanting to attract new clients online</div>
-        <div class="audience-item">Gyms &amp; fitness businesses promoting classes and membership</div>
-        <div class="audience-item">Retail shops running promotions and seasonal campaigns</div>
-        <div class="audience-item">Service businesses generating leads through social content</div>
-        <div class="audience-item">Any local owner who needs consistent, professional content without the agency cost</div>
+        <div class="audience-item">Local small businesses in the Katy and Houston area looking to grow their online presence and customer base</div>
+        <div class="audience-item">Entrepreneurs launching a new business who need guidance on setup, branding, pricing, and marketing</div>
+        <div class="audience-item">Established businesses wanting to increase revenue, improve pricing strategy, or expand their services</div>
+        <div class="audience-item">Any business owner who wants expert-level advice without the cost of hiring a consultant</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tech-section">
+    <div class="container">
+      <span class="section-label">Technology</span>
+      <h2 style="color:var(--light-1);">Built on proven, scalable technology.</h2>
+      <div class="tech-grid">
+        <span class="tech-pill">Claude AI (Anthropic)</span>
+        <span class="tech-pill">Cloudflare Workers</span>
+        <span class="tech-pill">GitHub Pages</span>
+        <span class="tech-pill">Vanilla HTML / CSS / JavaScript</span>
+        <span class="tech-pill">localStorage — private per-user data</span>
+        <span class="tech-pill">Zero framework dependency</span>
+        <span class="tech-pill">Mobile-first design</span>
       </div>
     </div>
   </section>
 
   <section class="cta-section">
     <div class="cta-inner">
-      <span class="section-label">Pricing</span>
-      <h2>One flat price. Five powerful tools.</h2>
-      <p>LUMEN gives you access to the full content platform — all five tools, brand voice memory, and weekly strategy — for $19.99 a month. No upsells. No tiers. One price.</p>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid var(--border-dark);border-radius:var(--radius-md);padding:2.5rem;margin-bottom:2.5rem;display:inline-block;">
-        <div style="font-family:'Montserrat',sans-serif;font-size:3.5rem;font-weight:800;color:var(--light-1);line-height:1;">$19.99</div>
-        <div style="color:var(--gray-mid);font-size:1rem;margin-top:0.25rem;">per month</div>
-        <div style="height:1px;background:var(--border-dark);margin:1.5rem 0;"></div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;text-align:left;">
-          <li style="color:var(--gray-light);font-size:0.93rem;">&#10003;&nbsp; Content Studio</li>
-          <li style="color:var(--gray-light);font-size:0.93rem;">&#10003;&nbsp; Viral Hook Generator</li>
-          <li style="color:var(--gray-light);font-size:0.93rem;">&#10003;&nbsp; Brand Voice Trainer</li>
-          <li style="color:var(--gray-light);font-size:0.93rem;">&#10003;&nbsp; Ad Campaign Builder</li>
-          <li style="color:var(--gray-light);font-size:0.93rem;">&#10003;&nbsp; Script Writer</li>
-          <li style="color:var(--gray-light);font-size:0.93rem;">&#10003;&nbsp; Caption-to-Strategy</li>
-        </ul>
-      </div>
+      <span class="section-label">Interested in Nexus AI?</span>
+      <h2>Get personalized business advising for your team.</h2>
+      <p>Nexus AI is available as a monthly subscription add-on to Ruby Wall web design and digital services clients. Pricing is available upon request.</p>
       <div class="cta-actions">
-        <a href="index.html#products" class="btn btn-outline">&#8592; Back to Products</a>
+        <a href="index.html" class="btn btn-outline">← Back to Home</a>
       </div>
     </div>
   </section>
@@ -290,19 +340,31 @@
         </div>
         <div class="footer-links-group">
           <h5>Products</h5>
-          <ul><li><a href="lumen.html">LUMEN</a></li><li><a href="nexus.html">Nexus AI</a></li><li><a href="meridian.html">Meridian</a></li></ul>
+          <ul>
+            <li><a href="lumen.html">LUMEN</a></li>
+            <li><a href="nexus.html">Nexus AI</a></li>
+            <li><a href="meridian.html">Meridian</a></li>
+          </ul>
         </div>
         <div class="footer-links-group">
           <h5>Company</h5>
-          <ul><li><a href="index.html#about">About</a></li><li><a href="index.html">Home</a></li></ul>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html">Home</a></li>
+          </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <p class="footer-copy">&copy; 2025 <span>Ruby Wall Ventures</span>. All rights reserved.</p>
-        <p class="footer-tagline">LUMEN by Ruby Wall</p>
+        <p class="footer-tagline">Nexus AI — Powered by Ruby Wall</p>
       </div>
     </div>
   </footer>
-  <script>function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }</script>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
