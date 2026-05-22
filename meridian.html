@@ -30,27 +30,27 @@
     .template-swatch { border-radius: var(--radius-sm); aspect-ratio: 16/9; display: flex; align-items: flex-end; padding: 10px; border: 1px solid var(--border-light); position: relative; overflow: hidden; transition: all var(--transition); }
     .template-swatch:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
     .template-name { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; color: rgba(255,255,255,0.9); text-transform: uppercase; text-shadow: 0 1px 4px rgba(0,0,0,0.6); position: relative; z-index: 1; }
-    .t-consulting { background: linear-gradient(135deg, #1a237e, #283593); }
-    .t-executive { background: linear-gradient(135deg, #1c1c1c, #2d2d2d); }
+    .t-consulting { background: linear-gradient(135deg, #c0392b, #ffffff); }
     .t-pitch-dark { background: linear-gradient(135deg, #0d0d0d, #1a0000); }
     .t-blueprint { background: linear-gradient(135deg, #0d47a1, #1565c0); }
-    .t-rose { background: linear-gradient(135deg, #880e4f, #ad1457); }
-    .t-ocean { background: linear-gradient(135deg, #006064, #00838f); }
+    .t-executive { background: linear-gradient(135deg, #1c1c1c, #2d2d2d); }
+    .t-azure { background: linear-gradient(135deg, #1565c0, #42a5f5); }
+    .t-kickoff { background: linear-gradient(135deg, #bf360c, #e64a19); }
+    .t-navy-gold { background: linear-gradient(135deg, #0d1b2a, #1b2a4a); }
+    .t-forest-white { background: linear-gradient(135deg, #1b5e20, #f1f8e9); }
+    .t-corporate { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .t-rose { background: linear-gradient(135deg, #880e4f, #c0392b); }
+    .t-teal-clean { background: linear-gradient(135deg, #00695c, #4db6ac); }
+    .t-mono { background: linear-gradient(135deg, #212121, #ffffff); }
+    .t-purple { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .t-warm { background: linear-gradient(135deg, #6d4c41, #a1887f); }
+    .t-coral { background: linear-gradient(135deg, #e64a19, #ffffff); }
+    .t-sage-neutral { background: linear-gradient(135deg, #33691e, #8bc34a); }
     .t-tech-dark { background: linear-gradient(135deg, #0a0a0a, #111827); }
-    .t-slate { background: linear-gradient(135deg, #37474f, #546e7a); }
-    .t-forest { background: linear-gradient(135deg, #1b5e20, #2e7d32); }
-    .t-midnight { background: linear-gradient(135deg, #1a0050, #311b92); }
-    .t-amber { background: linear-gradient(135deg, #e65100, #bf360c); }
-    .t-graphite { background: linear-gradient(135deg, #212121, #424242); }
-    .t-teal { background: linear-gradient(135deg, #004d40, #00695c); }
-    .t-editorial { background: linear-gradient(135deg, #f5f5f5, #e0e0e0); }
-    .t-crimson { background: linear-gradient(135deg, #7f0000, #b71c1c); }
-    .t-sand { background: linear-gradient(135deg, #5d4037, #795548); }
-    .t-navy { background: linear-gradient(135deg, #0d1b2a, #1b2a4a); }
-    .t-sage { background: linear-gradient(135deg, #33691e, #558b2f); }
-    .t-onyx { background: linear-gradient(135deg, #111111, #1f1f1f); }
-    .t-dusk { background: linear-gradient(135deg, #4a148c, #6a1b9a); }
-    .t-editorial .template-name { color: rgba(0,0,0,0.7); }
+    .t-ocean-light { background: linear-gradient(135deg, #006064, #80deea); }
+    .t-ruby { background: linear-gradient(135deg, #b71c1c, #e53935); }
+    .t-glass { background: linear-gradient(135deg, #e0e0e0, #ffffff); }
+    .t-forest-white .template-name, .t-mono .template-name, .t-coral .template-name, .t-glass .template-name { color: rgba(0,0,0,0.7); }
     .transitions-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; }
     .transition-chip { background: var(--dark-3); border: 1px solid var(--border-dark); color: var(--gray-light); font-size: 0.85rem; font-weight: 500; padding: 0.6rem 1.2rem; border-radius: 6px; }
     .fonts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
@@ -143,25 +143,25 @@
         <p style="color:var(--gray-mid);max-width:620px;">Each template applies a complete visual identity — color scheme, typography, accent style, and layout structure — across every slide in your deck.</p>
         <div class="templates-grid" style="margin-top:2rem;">
           <div class="template-swatch t-consulting"><span class="template-name">Consulting Pro</span></div>
-          <div class="template-swatch t-executive"><span class="template-name">Executive</span></div>
           <div class="template-swatch t-pitch-dark"><span class="template-name">Pitch Deck Dark</span></div>
           <div class="template-swatch t-blueprint"><span class="template-name">Blueprint</span></div>
+          <div class="template-swatch t-executive"><span class="template-name">Executive</span></div>
+          <div class="template-swatch t-azure"><span class="template-name">Azure Gradient</span></div>
+          <div class="template-swatch t-kickoff"><span class="template-name">Project Kickoff</span></div>
+          <div class="template-swatch t-navy-gold"><span class="template-name">Navy &amp; Gold</span></div>
+          <div class="template-swatch t-forest-white"><span class="template-name">Forest &amp; White</span></div>
+          <div class="template-swatch t-corporate"><span class="template-name">Corporate Blue</span></div>
           <div class="template-swatch t-rose"><span class="template-name">Rose Editorial</span></div>
-          <div class="template-swatch t-ocean"><span class="template-name">Ocean Depth</span></div>
+          <div class="template-swatch t-teal-clean"><span class="template-name">Teal &amp; Clean</span></div>
+          <div class="template-swatch t-mono"><span class="template-name">Monochrome Pro</span></div>
+          <div class="template-swatch t-purple"><span class="template-name">Purple Modern</span></div>
+          <div class="template-swatch t-warm"><span class="template-name">Warm Executive</span></div>
+          <div class="template-swatch t-coral"><span class="template-name">Coral &amp; White</span></div>
+          <div class="template-swatch t-sage-neutral"><span class="template-name">Sage Neutral</span></div>
           <div class="template-swatch t-tech-dark"><span class="template-name">Tech Dark</span></div>
-          <div class="template-swatch t-slate"><span class="template-name">Slate</span></div>
-          <div class="template-swatch t-forest"><span class="template-name">Forest</span></div>
-          <div class="template-swatch t-midnight"><span class="template-name">Midnight</span></div>
-          <div class="template-swatch t-amber"><span class="template-name">Amber</span></div>
-          <div class="template-swatch t-graphite"><span class="template-name">Graphite</span></div>
-          <div class="template-swatch t-teal"><span class="template-name">Teal</span></div>
-          <div class="template-swatch t-editorial"><span class="template-name">Editorial</span></div>
-          <div class="template-swatch t-crimson"><span class="template-name">Crimson</span></div>
-          <div class="template-swatch t-sand"><span class="template-name">Sand</span></div>
-          <div class="template-swatch t-navy"><span class="template-name">Navy</span></div>
-          <div class="template-swatch t-sage"><span class="template-name">Sage</span></div>
-          <div class="template-swatch t-onyx"><span class="template-name">Onyx</span></div>
-          <div class="template-swatch t-dusk"><span class="template-name">Dusk</span></div>
+          <div class="template-swatch t-ocean-light"><span class="template-name">Ocean Light</span></div>
+          <div class="template-swatch t-ruby"><span class="template-name">Ruby Classic</span></div>
+          <div class="template-swatch t-glass"><span class="template-name">Glass &amp; Light</span></div>
         </div>
       </div>
     </section>
