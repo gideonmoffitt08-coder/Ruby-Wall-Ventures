@@ -9,59 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .features-showcase {
-      padding: 6rem 2rem;
-    }
-
+    .features-showcase { padding: 6rem 2rem; }
     .features-showcase.light { background: var(--light-1); }
     .features-showcase.gray { background: var(--light-2); }
     .features-showcase.dark { background: var(--dark-2); }
-
-    .showcase-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-
-    .templates-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 1rem;
-      margin-top: 2.5rem;
-      max-width: var(--max-width);
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .template-swatch {
-      border-radius: var(--radius-sm);
-      aspect-ratio: 16/9;
-      display: flex;
-      align-items: flex-end;
-      padding: 10px;
-      border: 1px solid var(--border-light);
-      position: relative;
-      overflow: hidden;
-      transition: all var(--transition);
-    }
-
-    .template-swatch:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .template-name {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.9);
-      text-transform: uppercase;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Template color schemes */
+    .showcase-inner { max-width: var(--max-width); margin: 0 auto; }
+    .templates-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; margin-top: 2.5rem; max-width: var(--max-width); margin-left: auto; margin-right: auto; }
+    .template-swatch { border-radius: var(--radius-sm); aspect-ratio: 16/9; display: flex; align-items: flex-end; padding: 10px; border: 1px solid var(--border-light); position: relative; overflow: hidden; transition: all var(--transition); }
+    .template-swatch:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .template-name { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; color: rgba(255,255,255,0.9); text-transform: uppercase; text-shadow: 0 1px 4px rgba(0,0,0,0.6); position: relative; z-index: 1; }
     .t-consulting { background: linear-gradient(135deg, #1a237e, #283593); }
     .t-executive { background: linear-gradient(135deg, #1c1c1c, #2d2d2d); }
     .t-pitch-dark { background: linear-gradient(135deg, #0d0d0d, #1a0000); }
@@ -82,276 +38,52 @@
     .t-sage { background: linear-gradient(135deg, #33691e, #558b2f); }
     .t-onyx { background: linear-gradient(135deg, #111111, #1f1f1f); }
     .t-dusk { background: linear-gradient(135deg, #4a148c, #6a1b9a); }
-
     .t-editorial .template-name { color: rgba(0,0,0,0.7); }
-
-    .transitions-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 2.5rem;
-    }
-
-    .transition-chip {
-      background: var(--dark-3);
-      border: 1px solid var(--border-dark);
-      color: var(--gray-light);
-      font-size: 0.85rem;
-      font-weight: 500;
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      transition: all var(--transition);
-    }
-
-    .transition-chip:hover {
-      background: rgba(192,39,45,0.12);
-      border-color: rgba(192,39,45,0.35);
-      color: var(--light-1);
-    }
-
-    .fonts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 2.5rem;
-    }
-
-    .font-card {
-      background: var(--light-1);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-sm);
-      padding: 1.5rem;
-      transition: all var(--transition);
-    }
-
-    .font-card:hover {
-      box-shadow: var(--shadow-sm);
-      border-color: rgba(192,39,45,0.25);
-    }
-
-    .font-sample {
-      font-size: 1.6rem;
-      color: var(--dark-2);
-      line-height: 1.2;
-      margin-bottom: 0.4rem;
-    }
-
-    .font-name {
-      font-size: 0.75rem;
-      color: var(--gray-mid);
-      font-family: 'Inter', sans-serif;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .placement-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .placement-card {
-      background: var(--dark-3);
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border-dark);
-      aspect-ratio: 16/9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 6px;
-      padding: 12px;
-      transition: all var(--transition);
-      cursor: default;
-    }
-
-    .placement-card:hover {
-      border-color: rgba(192,39,45,0.4);
-    }
-
-    .placement-preview {
-      width: 100%;
-      flex: 1;
-      border-radius: 3px;
-      position: relative;
-      overflow: hidden;
-      background: rgba(255,255,255,0.04);
-    }
-
-    .placement-label {
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray-mid);
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    /* Placement previews */
-    .p-full-bg .placement-preview { background: rgba(192,39,45,0.3); }
-    .p-tinted .placement-preview { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), rgba(192,39,45,0.3); }
-    .p-right .placement-preview::after { content:''; position:absolute; right:0; top:0; bottom:0; width:45%; background:rgba(192,39,45,0.3); }
-    .p-left .placement-preview::before { content:''; position:absolute; left:0; top:0; bottom:0; width:45%; background:rgba(192,39,45,0.3); }
-    .p-top .placement-preview::before { content:''; position:absolute; top:0; left:0; right:0; height:40%; background:rgba(192,39,45,0.3); }
-
-    /* Pricing */
-    .pricing-section-meridian {
-      padding: 6rem 2rem;
-      background: var(--light-2);
-    }
-
-    .meridian-pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      max-width: 960px;
-      margin: 3rem auto 0;
-    }
-
-    .m-pricing-card {
-      background: var(--light-1);
-      border-radius: var(--radius-md);
-      padding: 2.5rem 2rem;
-      border: 1px solid var(--border-light);
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      transition: all var(--transition);
-      position: relative;
-    }
-
-    .m-pricing-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-4px);
-    }
-
-    .m-pricing-card.featured {
-      border-color: var(--red-bright);
-      box-shadow: 0 0 0 2px rgba(192,39,45,0.12), var(--shadow-md);
-    }
-
-    .m-pricing-tier {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--red-bright);
-      margin-bottom: 0.5rem;
-    }
-
-    .m-pricing-card h3 {
-      font-size: 1.5rem;
-      color: var(--dark-2);
-      margin-bottom: 0;
-    }
-
-    .m-price {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.6rem;
-      font-weight: 800;
-      color: var(--dark-2);
-      line-height: 1;
-      margin: 1.25rem 0 0.25rem;
-    }
-
-    .m-price-period {
-      color: var(--gray-mid);
-      font-size: 0.88rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .m-divider {
-      height: 1px;
-      background: var(--border-light);
-      margin-bottom: 1.5rem;
-    }
-
-    .m-features {
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-      flex-grow: 1;
-      margin-bottom: 2rem;
-    }
-
-    .m-feature {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      font-size: 0.9rem;
-      color: var(--gray-mid);
-    }
-
-    .m-check {
-      color: var(--red-bright);
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .all-plans-note {
-      max-width: 680px;
-      margin: 3rem auto 0;
-      background: rgba(192,39,45,0.06);
-      border: 1px solid rgba(192,39,45,0.15);
-      border-radius: var(--radius-sm);
-      padding: 1.5rem 2rem;
-      text-align: center;
-    }
-
-    .all-plans-note p {
-      color: var(--gray-mid);
-      font-size: 0.93rem;
-    }
-
-    .all-plans-note strong {
-      color: var(--dark-2);
-    }
-
-    @media (max-width: 860px) {
-      .meridian-pricing-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-      }
-    }
+    .transitions-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; }
+    .transition-chip { background: var(--dark-3); border: 1px solid var(--border-dark); color: var(--gray-light); font-size: 0.85rem; font-weight: 500; padding: 0.6rem 1.2rem; border-radius: 6px; }
+    .fonts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+    .font-card { background: var(--light-1); border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 1.5rem; }
+    .font-sample { font-size: 1.6rem; color: var(--dark-2); line-height: 1.2; margin-bottom: 0.4rem; }
+    .font-name { font-size: 0.75rem; color: var(--gray-mid); font-family: 'Inter', sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+    .meridian-pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 960px; margin: 3rem auto 0; }
+    .m-pricing-card { background: var(--light-1); border-radius: var(--radius-md); padding: 2.5rem 2rem; border: 1px solid var(--border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+    .m-pricing-card.featured { border-color: var(--red-bright); box-shadow: 0 0 0 2px rgba(192,39,45,0.12), var(--shadow-md); }
+    .m-pricing-tier { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red-bright); margin-bottom: 0.5rem; }
+    .m-pricing-card h3 { font-size: 1.5rem; color: var(--dark-2); margin-bottom: 0; }
+    .m-price { font-family: 'Montserrat', sans-serif; font-size: 2.6rem; font-weight: 800; color: var(--dark-2); line-height: 1; margin: 1.25rem 0 0.25rem; }
+    .m-price-period { color: var(--gray-mid); font-size: 0.88rem; margin-bottom: 1.75rem; }
+    .m-divider { height: 1px; background: var(--border-light); margin-bottom: 1.5rem; }
+    .m-features { display: flex; flex-direction: column; gap: 0.7rem; flex-grow: 1; margin-bottom: 2rem; }
+    .m-feature { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.9rem; color: var(--gray-mid); }
+    .m-check { color: var(--red-bright); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .all-plans-note { max-width: 680px; margin: 3rem auto 0; background: rgba(192,39,45,0.06); border: 1px solid rgba(192,39,45,0.15); border-radius: var(--radius-sm); padding: 1.5rem 2rem; text-align: center; }
+    .all-plans-note p { color: var(--gray-mid); font-size: 0.93rem; }
+    .all-plans-note strong { color: var(--dark-2); }
+    @media (max-width: 860px) { .meridian-pricing-grid { grid-template-columns: 1fr; max-width: 400px; } }
   </style>
 </head>
 <body>
-
-  <!-- NAVIGATION -->
   <nav class="nav">
     <div class="nav-inner">
-      <a class="nav-logo" href="index.html">
-        <img src="images/logo-rwv.png.PNG" alt="Ruby Wall Ventures" />
-      </a>
+      <a class="nav-logo" href="index.html"><img src="images:logo-rwv.PNG" alt="Ruby Wall Ventures" /></a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="lumen.html">LUMEN</a></li>
         <li><a href="nexus.html">Nexus AI</a></li>
         <li><a href="meridian.html" class="active">Meridian</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Home</a>
-      <a href="lumen.html">LUMEN</a>
-      <a href="nexus.html">Nexus AI</a>
-      <a href="meridian.html">Meridian</a>
+      <a href="index.html">Home</a><a href="lumen.html">LUMEN</a><a href="nexus.html">Nexus AI</a><a href="meridian.html">Meridian</a>
     </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero-product">
-    <img src="images/logo-meridian.png.PNG" alt="Meridian by Ruby Wall" class="hero-product-logo" style="height:clamp(100px,14vw,160px);" />
+    <img src="images:logo-meridian.PNG" alt="Meridian by Ruby Wall" class="hero-product-logo" style="height:clamp(100px,14vw,160px);" />
     <p class="hero-product-powered">Powered by Ruby Wall</p>
     <h1>AI-Powered Presentation Builder</h1>
-    <p class="hero-product-tagline">
-      Describe your topic in plain language. Meridian generates a complete, professionally designed slide deck in minutes — no design skills required.
-    </p>
+    <p class="hero-product-tagline">Describe your topic in plain language. Meridian generates a complete, professionally designed slide deck in minutes — no design skills required.</p>
     <div class="hero-product-meta">
       <span class="price-badge">From $9.99 / month</span>
       <span class="tech-tag">20 Professional Templates</span>
@@ -360,19 +92,15 @@
     <a href="#features" class="btn btn-primary">Explore Meridian</a>
   </section>
 
-  <!-- OVERVIEW -->
   <section class="features-section gray" style="padding:4rem 2rem;">
     <div class="container text-center" style="max-width:760px;">
       <span class="section-label">What Is Meridian?</span>
       <h2 style="color:var(--dark-2);margin-bottom:1.25rem;">Professional presentations in minutes, not hours.</h2>
-      <p style="color:var(--gray-mid);">Meridian eliminates the need for design skills, expensive software, or hours of manual slide building — replacing all of it with a single AI-driven workflow. It is a production-ready platform with user authentication, tiered subscription plans, and a full presentation experience — accessible directly from any browser, including on mobile and iPad.</p>
+      <p style="color:var(--gray-mid);">Meridian eliminates the need for design skills, expensive software, or hours of manual slide building. It is a production-ready platform with user authentication, tiered subscription plans, and a full presentation experience — accessible directly from any browser.</p>
     </div>
   </section>
 
-  <!-- FEATURES -->
   <div id="features">
-
-    <!-- AI Slide Generation -->
     <section class="features-showcase light">
       <div class="showcase-inner">
         <span class="section-label">Feature 01</span>
@@ -395,13 +123,12 @@
       </div>
     </section>
 
-    <!-- 20 Templates -->
     <section class="features-showcase gray">
       <div class="showcase-inner">
         <span class="section-label">Feature 02</span>
         <h2 style="color:var(--dark-2);">20 Professional Templates</h2>
         <div class="divider"></div>
-        <p style="color:var(--gray-mid);max-width:620px;">Each template applies a complete visual identity — color scheme, typography, accent style, and layout structure — across every slide in your deck. Every visual decision is made for you.</p>
+        <p style="color:var(--gray-mid);max-width:620px;">Each template applies a complete visual identity — color scheme, typography, accent style, and layout structure — across every slide in your deck.</p>
         <div class="templates-grid" style="margin-top:2rem;">
           <div class="template-swatch t-consulting"><span class="template-name">Consulting Pro</span></div>
           <div class="template-swatch t-executive"><span class="template-name">Executive</span></div>
@@ -427,101 +154,45 @@
       </div>
     </section>
 
-    <!-- Data Visualization -->
     <section class="features-showcase dark">
       <div class="showcase-inner">
         <span class="section-label">Feature 03</span>
         <h2 style="color:var(--light-1);">Data Visualization</h2>
         <div class="divider"></div>
         <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:start;">
-          <div>
-            <p style="color:var(--gray-light);">Paste raw data — numbers, percentages, table rows, or key stats — and Meridian automatically generates the most appropriate chart or visualization. Charts are inserted into the deck as dedicated slides when the presentation generates — no manual placement required.</p>
-          </div>
+          <div><p style="color:var(--gray-light);">Paste raw data and Meridian automatically generates the most appropriate chart or visualization, inserted into the deck as dedicated slides.</p></div>
           <div>
             <ul class="bullet-list">
               <li style="color:var(--gray-light);">Bar charts for category comparisons</li>
               <li style="color:var(--gray-light);">Line charts for trends over time</li>
               <li style="color:var(--gray-light);">Pie and doughnut charts for proportional breakdowns</li>
               <li style="color:var(--gray-light);">Tables for structured multi-column data</li>
-              <li style="color:var(--gray-light);">Infographics for key standalone metrics</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Presentation Mode -->
     <section class="features-showcase light">
       <div class="showcase-inner">
         <span class="section-label">Feature 04</span>
         <h2 style="color:var(--dark-2);">Presentation Mode</h2>
         <div class="divider"></div>
-        <p style="color:var(--gray-mid);max-width:640px;margin-bottom:2.5rem;">A fullscreen Presentation Mode lets you present directly from the browser with 8 animated slide transitions, keyboard navigation, dot indicators, a progress bar, and auto-hiding controls. Toggle native fullscreen without leaving the platform.</p>
+        <p style="color:var(--gray-mid);max-width:640px;margin-bottom:2.5rem;">A fullscreen Presentation Mode lets you present directly from the browser with 8 animated slide transitions, keyboard navigation, dot indicators, a progress bar, and auto-hiding controls.</p>
         <div class="transitions-grid">
-          <div class="transition-chip">Fade</div>
-          <div class="transition-chip">Slide</div>
-          <div class="transition-chip">Rise</div>
-          <div class="transition-chip">Zoom In</div>
-          <div class="transition-chip">Zoom Out</div>
-          <div class="transition-chip">Flip</div>
-          <div class="transition-chip">Dissolve</div>
-          <div class="transition-chip">Push</div>
-          <div class="transition-chip">Cut</div>
-        </div>
-        <div style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:1rem;">
-          <div style="background:var(--light-2);border-radius:var(--radius-sm);padding:1rem 1.5rem;border:1px solid var(--border-light);">
-            <div style="font-size:0.75rem;font-weight:600;color:var(--gray-mid);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.25rem;">Speed Controls</div>
-            <div style="color:var(--dark-2);font-size:0.92rem;">Fast · Normal · Slow</div>
-          </div>
-          <div style="background:var(--light-2);border-radius:var(--radius-sm);padding:1rem 1.5rem;border:1px solid var(--border-light);">
-            <div style="font-size:0.75rem;font-weight:600;color:var(--gray-mid);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.25rem;">Navigation</div>
-            <div style="color:var(--dark-2);font-size:0.92rem;">Keyboard · Dot indicators · Progress bar</div>
-          </div>
+          <div class="transition-chip">Fade</div><div class="transition-chip">Slide</div><div class="transition-chip">Rise</div><div class="transition-chip">Zoom In</div><div class="transition-chip">Zoom Out</div><div class="transition-chip">Flip</div><div class="transition-chip">Dissolve</div><div class="transition-chip">Push</div><div class="transition-chip">Cut</div>
         </div>
       </div>
     </section>
 
-    <!-- Photo Import -->
-    <section class="features-showcase gray">
-      <div class="showcase-inner">
-        <span class="section-label">Feature 05</span>
-        <h2 style="color:var(--dark-2);">Photo Import &amp; Placement</h2>
-        <div class="divider"></div>
-        <p style="color:var(--gray-mid);max-width:640px;margin-bottom:2rem;">Upload your own photos and choose exactly how each image appears on a slide. Five placement options give you full creative control without requiring a design tool.</p>
-        <div class="placement-grid">
-          <div class="placement-card p-full-bg">
-            <div class="placement-preview"></div>
-            <span class="placement-label">Full Background</span>
-          </div>
-          <div class="placement-card p-tinted">
-            <div class="placement-preview"></div>
-            <span class="placement-label">Tinted Overlay</span>
-          </div>
-          <div class="placement-card p-right">
-            <div class="placement-preview"></div>
-            <span class="placement-label">Right Panel</span>
-          </div>
-          <div class="placement-card p-left">
-            <div class="placement-preview"></div>
-            <span class="placement-label">Left Panel</span>
-          </div>
-          <div class="placement-card p-top">
-            <div class="placement-preview"></div>
-            <span class="placement-label">Top Strip</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Per-Slide Editing -->
     <section class="features-showcase light">
       <div class="showcase-inner">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
           <div>
-            <span class="section-label">Feature 06</span>
+            <span class="section-label">Feature 05</span>
             <h2 style="color:var(--dark-2);">Per-Slide Editing</h2>
             <div class="divider"></div>
-            <p style="color:var(--gray-mid);">Every element of every slide is editable after generation. Modify headlines, body text, bullet points, stat numbers, and subheadlines directly on the slide. Change the background color, swap fonts, and adjust text size from four preset scales.</p>
+            <p style="color:var(--gray-mid);">Every element of every slide is editable after generation. Modify headlines, body text, bullet points, stat numbers, and subheadlines directly on the slide. Change background color, swap fonts, and adjust text size.</p>
           </div>
           <div>
             <ul class="bullet-list">
@@ -535,50 +206,25 @@
       </div>
     </section>
 
-    <!-- Font Options -->
     <section class="features-showcase gray">
       <div class="showcase-inner">
-        <span class="section-label">Feature 07</span>
+        <span class="section-label">Feature 06</span>
         <h2 style="color:var(--dark-2);">7 Professional Fonts</h2>
         <div class="divider"></div>
-        <p style="color:var(--gray-mid);max-width:600px;margin-bottom:2rem;">Each typeface has a distinct character suited to different presentation styles — from editorial to corporate to tech.</p>
         <div class="fonts-grid">
-          <div class="font-card">
-            <div class="font-sample" style="font-family:'Inter',sans-serif;">Inter</div>
-            <div class="font-name">Clean · Modern · Versatile</div>
-          </div>
-          <div class="font-card">
-            <div class="font-sample" style="font-family:'Montserrat',sans-serif;">Montserrat</div>
-            <div class="font-name">Bold · Corporate · Confident</div>
-          </div>
-          <div class="font-card">
-            <div class="font-sample" style="font-family:'Georgia',serif;font-style:italic;">Playfair Display</div>
-            <div class="font-name">Editorial · Elegant · Premium</div>
-          </div>
-          <div class="font-card">
-            <div class="font-sample" style="font-family:'Trebuchet MS',sans-serif;letter-spacing:-0.02em;">Raleway</div>
-            <div class="font-name">Creative · Refined · Stylish</div>
-          </div>
-          <div class="font-card">
-            <div class="font-sample" style="font-family:'Verdana',sans-serif;">Poppins</div>
-            <div class="font-name">Friendly · Geometric · Modern</div>
-          </div>
-          <div class="font-card">
-            <div class="font-sample" style="font-family:'Arial',sans-serif;font-weight:300;">DM Sans</div>
-            <div class="font-name">Clean · Minimal · Professional</div>
-          </div>
-          <div class="font-card">
-            <div class="font-sample" style="font-family:'Courier New',monospace;letter-spacing:-0.03em;">Space Grotesk</div>
-            <div class="font-name">Tech · Distinct · Contemporary</div>
-          </div>
+          <div class="font-card"><div class="font-sample" style="font-family:'Inter',sans-serif;">Inter</div><div class="font-name">Clean · Modern · Versatile</div></div>
+          <div class="font-card"><div class="font-sample" style="font-family:'Montserrat',sans-serif;">Montserrat</div><div class="font-name">Bold · Corporate · Confident</div></div>
+          <div class="font-card"><div class="font-sample" style="font-family:'Georgia',serif;font-style:italic;">Playfair Display</div><div class="font-name">Editorial · Elegant · Premium</div></div>
+          <div class="font-card"><div class="font-sample" style="font-family:'Trebuchet MS',sans-serif;">Raleway</div><div class="font-name">Creative · Refined · Stylish</div></div>
+          <div class="font-card"><div class="font-sample" style="font-family:'Verdana',sans-serif;">Poppins</div><div class="font-name">Friendly · Geometric · Modern</div></div>
+          <div class="font-card"><div class="font-sample" style="font-family:'Arial',sans-serif;font-weight:300;">DM Sans</div><div class="font-name">Clean · Minimal · Professional</div></div>
+          <div class="font-card"><div class="font-sample" style="font-family:'Courier New',monospace;">Space Grotesk</div><div class="font-name">Tech · Distinct · Contemporary</div></div>
         </div>
       </div>
     </section>
+  </div>
 
-  </div><!-- end #features -->
-
-  <!-- PRICING -->
-  <section class="pricing-section-meridian">
+  <section style="padding:6rem 2rem;background:var(--light-2);">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Subscription Tiers</span>
@@ -586,7 +232,6 @@
         <p style="color:var(--gray-mid);">All plans include access to all 20 templates, all fonts, photo import, presentation mode, per-slide editing, and full text customization.</p>
       </div>
       <div class="meridian-pricing-grid">
-
         <div class="m-pricing-card">
           <div class="m-pricing-tier">Starter</div>
           <h3>Starter</h3>
@@ -594,17 +239,15 @@
           <div class="m-price-period">per month</div>
           <div class="m-divider"></div>
           <div class="m-features">
-            <div class="m-feature"><span class="m-check">✓</span> 12 slides per deck</div>
-            <div class="m-feature"><span class="m-check">✓</span> 3 presentations per 48 hours</div>
-            <div class="m-feature"><span class="m-check">✓</span> All 20 templates</div>
-            <div class="m-feature"><span class="m-check">✓</span> Per-slide editing</div>
-            <div class="m-feature"><span class="m-check">✓</span> All 7 fonts</div>
-            <div class="m-feature"><span class="m-check">✓</span> Photo import</div>
-            <div class="m-feature"><span class="m-check">✓</span> Presentation mode</div>
-            <div class="m-feature" style="color:var(--gray-mid);opacity:0.5;"><span style="color:var(--gray-mid);">—</span> Data visualization</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> 12 slides per deck</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> 3 presentations per 48 hours</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> All 20 templates</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> Per-slide editing</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> All 7 fonts</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> Photo import</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> Presentation mode</div>
           </div>
         </div>
-
         <div class="m-pricing-card featured">
           <div class="featured-badge">Most Popular</div>
           <div class="m-pricing-tier">Standard</div>
@@ -613,18 +256,17 @@
           <div class="m-price-period">per month</div>
           <div class="m-divider"></div>
           <div class="m-features">
-            <div class="m-feature"><span class="m-check">✓</span> 18 slides per deck</div>
-            <div class="m-feature"><span class="m-check">✓</span> 5 presentations per 48 hours</div>
-            <div class="m-feature"><span class="m-check">✓</span> All 20 templates</div>
-            <div class="m-feature"><span class="m-check">✓</span> Per-slide editing</div>
-            <div class="m-feature"><span class="m-check">✓</span> All 7 fonts</div>
-            <div class="m-feature"><span class="m-check">✓</span> Photo import</div>
-            <div class="m-feature"><span class="m-check">✓</span> Presentation mode</div>
-            <div class="m-feature"><span class="m-check">✓</span> Full data visualization</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> 18 slides per deck</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> 5 presentations per 48 hours</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> All 20 templates</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> Per-slide editing</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> All 7 fonts</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> Photo import</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> Presentation mode</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> Full data visualization</div>
           </div>
           <a href="index.html" class="btn btn-primary" style="text-align:center;justify-content:center;">Get Started</a>
         </div>
-
         <div class="m-pricing-card">
           <div class="m-pricing-tier">Premium</div>
           <h3>Premium</h3>
@@ -632,26 +274,23 @@
           <div class="m-price-period">per month</div>
           <div class="m-divider"></div>
           <div class="m-features">
-            <div class="m-feature"><span class="m-check">✓</span> 24 slides per deck</div>
-            <div class="m-feature"><span class="m-check">✓</span> 8 presentations per 48 hours</div>
-            <div class="m-feature"><span class="m-check">✓</span> All 20 templates</div>
-            <div class="m-feature"><span class="m-check">✓</span> Per-slide editing</div>
-            <div class="m-feature"><span class="m-check">✓</span> All 7 fonts</div>
-            <div class="m-feature"><span class="m-check">✓</span> Photo import</div>
-            <div class="m-feature"><span class="m-check">✓</span> Presentation mode</div>
-            <div class="m-feature"><span class="m-check">✓</span> Full data visualization</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> 24 slides per deck</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> 8 presentations per 48 hours</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> All 20 templates</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> Per-slide editing</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> All 7 fonts</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> Photo import</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> Presentation mode</div>
+            <div class="m-feature"><span class="m-check">&#10003;</span> Full data visualization</div>
           </div>
         </div>
-
       </div>
-
       <div class="all-plans-note">
-        <p><strong>All plans include:</strong> All 20 templates · All 7 fonts · Photo import with 5 placement options · Fullscreen presentation mode · Per-slide editing · Full text customization</p>
+        <p><strong>All plans include:</strong> All 20 templates · All 7 fonts · Photo import · Fullscreen presentation mode · Per-slide editing · Full text customization</p>
       </div>
     </div>
   </section>
 
-  <!-- TECH -->
   <section class="tech-section">
     <div class="container">
       <span class="section-label">Technology</span>
@@ -662,47 +301,36 @@
         <span class="tech-pill">GitHub Pages hosting</span>
         <span class="tech-pill">Chart.js 4.4 — data visualization</span>
         <span class="tech-pill">Single-file HTML/CSS/JavaScript</span>
-        <span class="tech-pill">localStorage session management</span>
-        <span class="tech-pill">Admin dashboard with live MRR</span>
         <span class="tech-pill">Mobile &amp; iPad compatible</span>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta-section">
     <div class="cta-inner">
       <span class="section-label">Get Started with Meridian</span>
       <h2>Professional presentations in minutes.</h2>
-      <p>Meridian is available to Ruby Wall clients. Contact us to get access or learn more about bundled packages combining Meridian with web design and digital services.</p>
+      <p>Meridian is available to Ruby Wall clients. Contact us to get access or learn more about bundled packages.</p>
       <div class="cta-actions">
-        <a href="index.html" class="btn btn-outline">← Back to Home</a>
+        <a href="index.html" class="btn btn-outline">&#8592; Back to Home</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="images/logo-rwv.png.PNG" alt="Ruby Wall Ventures" />
+          <img src="images:logo-rwv.PNG" alt="Ruby Wall Ventures" />
           <span class="footer-brand-name">Ruby Wall Ventures</span>
         </div>
         <div class="footer-links-group">
           <h5>Products</h5>
-          <ul>
-            <li><a href="lumen.html">LUMEN</a></li>
-            <li><a href="nexus.html">Nexus AI</a></li>
-            <li><a href="meridian.html">Meridian</a></li>
-          </ul>
+          <ul><li><a href="lumen.html">LUMEN</a></li><li><a href="nexus.html">Nexus AI</a></li><li><a href="meridian.html">Meridian</a></li></ul>
         </div>
         <div class="footer-links-group">
           <h5>Company</h5>
-          <ul>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html">Home</a></li>
-          </ul>
+          <ul><li><a href="index.html#about">About</a></li><li><a href="index.html">Home</a></li></ul>
         </div>
       </div>
       <div class="footer-bottom">
@@ -711,12 +339,6 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById('mobileMenu').classList.toggle('open');
-    }
-  </script>
-
+  <script>function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }</script>
 </body>
 </html>
