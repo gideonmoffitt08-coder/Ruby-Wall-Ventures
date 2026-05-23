@@ -53,6 +53,124 @@
     .t-glass         { background: linear-gradient(135deg, #667eea, #764ba2) !important; }
     /* All labels white with shadow — always readable over any split */
     .template-name { color: rgba(255,255,255,0.95) !important; text-shadow: 0 1px 6px rgba(0,0,0,0.8) !important; }
+
+    /* Swatch preview lines — mimic actual slide content */
+    .swatch-lines {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 2;
+    }
+    .swatch-accent-line {
+      width: 38px;
+      height: 3px;
+      border-radius: 2px;
+      background: currentColor;
+      opacity: 0.9;
+      margin-bottom: 2px;
+    }
+    .swatch-headline {
+      width: 72px;
+      height: 4px;
+      border-radius: 2px;
+      background: currentColor;
+      opacity: 0.55;
+    }
+    .swatch-body {
+      width: 88px;
+      height: 3px;
+      border-radius: 2px;
+      background: currentColor;
+      opacity: 0.30;
+    }
+    .swatch-body-short {
+      width: 60px;
+      opacity: 0.20;
+    }
+
+    /* Accent line colors per template */
+    .t-consulting    .swatch-accent-line { background: #c0392b; color: #111111; }
+    .t-consulting    .swatch-headline,
+    .t-consulting    .swatch-body { background: #111111; }
+
+    .t-pitch-dark    .swatch-accent-line { background: #f5a623; color: #f5f5f5; }
+    .t-pitch-dark    .swatch-headline,
+    .t-pitch-dark    .swatch-body { background: #f5f5f5; }
+
+    .t-blueprint     .swatch-accent-line { background: #1a6abf; color: #111111; }
+    .t-blueprint     .swatch-headline,
+    .t-blueprint     .swatch-body { background: #111111; }
+
+    .t-executive     .swatch-accent-line { background: #c0392b; color: #f5f5f5; }
+    .t-executive     .swatch-headline,
+    .t-executive     .swatch-body { background: #f5f5f5; }
+
+    .t-azure         .swatch-accent-line { background: #90caf9; color: #ffffff; }
+    .t-azure         .swatch-headline,
+    .t-azure         .swatch-body { background: #ffffff; }
+
+    .t-kickoff       .swatch-accent-line { background: #d84315; color: #111111; }
+    .t-kickoff       .swatch-headline,
+    .t-kickoff       .swatch-body { background: #111111; }
+
+    .t-navy-gold     .swatch-accent-line { background: #f5a623; color: #f5f5f5; }
+    .t-navy-gold     .swatch-headline,
+    .t-navy-gold     .swatch-body { background: #f5f5f5; }
+
+    .t-forest-white  .swatch-accent-line { background: #2e7d32; color: #111111; }
+    .t-forest-white  .swatch-headline,
+    .t-forest-white  .swatch-body { background: #111111; }
+
+    .t-corporate     .swatch-accent-line { background: #90caf9; color: #ffffff; }
+    .t-corporate     .swatch-headline,
+    .t-corporate     .swatch-body { background: #ffffff; }
+
+    .t-rose          .swatch-accent-line { background: #c0392b; color: #111111; }
+    .t-rose          .swatch-headline,
+    .t-rose          .swatch-body { background: #111111; }
+
+    .t-teal-clean    .swatch-accent-line { background: #80cbc4; color: #ffffff; }
+    .t-teal-clean    .swatch-headline,
+    .t-teal-clean    .swatch-body { background: #ffffff; }
+
+    .t-mono          .swatch-accent-line { background: #888888; color: #f5f5f5; }
+    .t-mono          .swatch-headline,
+    .t-mono          .swatch-body { background: #f5f5f5; }
+
+    .t-purple        .swatch-accent-line { background: #ce93d8; color: #ffffff; }
+    .t-purple        .swatch-headline,
+    .t-purple        .swatch-body { background: #ffffff; }
+
+    .t-warm          .swatch-accent-line { background: #f5a623; color: #f5f5f5; }
+    .t-warm          .swatch-headline,
+    .t-warm          .swatch-body { background: #f5f5f5; }
+
+    .t-coral         .swatch-accent-line { background: #e64a19; color: #111111; }
+    .t-coral         .swatch-headline,
+    .t-coral         .swatch-body { background: #111111; }
+
+    .t-sage-neutral  .swatch-accent-line { background: #aed581; color: #ffffff; }
+    .t-sage-neutral  .swatch-headline,
+    .t-sage-neutral  .swatch-body { background: #ffffff; }
+
+    .t-tech-dark     .swatch-accent-line { background: #29b6f6; color: #f5f5f5; }
+    .t-tech-dark     .swatch-headline,
+    .t-tech-dark     .swatch-body { background: #f5f5f5; }
+
+    .t-ocean-light   .swatch-accent-line { background: #4dd0e1; color: #ffffff; }
+    .t-ocean-light   .swatch-headline,
+    .t-ocean-light   .swatch-body { background: #ffffff; }
+
+    .t-ruby          .swatch-accent-line { background: #ff8a80; color: #ffffff; }
+    .t-ruby          .swatch-headline,
+    .t-ruby          .swatch-body { background: #ffffff; }
+
+    .t-glass         .swatch-accent-line { background: #e0aaff; color: #ffffff; }
+    .t-glass         .swatch-headline,
+    .t-glass         .swatch-body { background: #ffffff; }
     .transitions-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; }
     .transition-chip { background: var(--dark-3); border: 1px solid var(--border-dark); color: var(--gray-light); font-size: 0.85rem; font-weight: 500; padding: 0.6rem 1.2rem; border-radius: 6px; }
     .fonts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
@@ -144,26 +262,146 @@
         <div class="divider"></div>
         <p style="color:var(--gray-mid);max-width:620px;">Each template applies a complete visual identity — color scheme, typography, accent style, and layout structure — across every slide in your deck.</p>
         <div class="templates-grid" style="margin-top:2rem;">
-          <div class="template-swatch t-consulting"><span class="template-name">Consulting Pro</span></div>
-          <div class="template-swatch t-pitch-dark"><span class="template-name">Pitch Deck Dark</span></div>
-          <div class="template-swatch t-blueprint"><span class="template-name">Blueprint</span></div>
-          <div class="template-swatch t-executive"><span class="template-name">Executive</span></div>
-          <div class="template-swatch t-azure"><span class="template-name">Azure Gradient</span></div>
-          <div class="template-swatch t-kickoff"><span class="template-name">Project Kickoff</span></div>
-          <div class="template-swatch t-navy-gold"><span class="template-name">Navy &amp; Gold</span></div>
-          <div class="template-swatch t-forest-white"><span class="template-name">Forest &amp; White</span></div>
-          <div class="template-swatch t-corporate"><span class="template-name">Corporate Blue</span></div>
-          <div class="template-swatch t-rose"><span class="template-name">Rose Editorial</span></div>
-          <div class="template-swatch t-teal-clean"><span class="template-name">Teal &amp; Clean</span></div>
-          <div class="template-swatch t-mono"><span class="template-name">Monochrome Pro</span></div>
-          <div class="template-swatch t-purple"><span class="template-name">Purple Modern</span></div>
-          <div class="template-swatch t-warm"><span class="template-name">Warm Executive</span></div>
-          <div class="template-swatch t-coral"><span class="template-name">Coral &amp; White</span></div>
-          <div class="template-swatch t-sage-neutral"><span class="template-name">Sage Neutral</span></div>
-          <div class="template-swatch t-tech-dark"><span class="template-name">Tech Dark</span></div>
-          <div class="template-swatch t-ocean-light"><span class="template-name">Ocean Light</span></div>
-          <div class="template-swatch t-ruby"><span class="template-name">Ruby Classic</span></div>
-          <div class="template-swatch t-glass"><span class="template-name">Glass &amp; Light</span></div>
+          <div class="template-swatch t-consulting"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Consulting Pro</span></div>
+          <div class="template-swatch t-pitch-dark"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Pitch Deck Dark</span></div>
+          <div class="template-swatch t-blueprint"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Blueprint</span></div>
+          <div class="template-swatch t-executive"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Executive</span></div>
+          <div class="template-swatch t-azure"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Azure Gradient</span></div>
+          <div class="template-swatch t-kickoff"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Project Kickoff</span></div>
+          <div class="template-swatch t-navy-gold"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Navy &amp; Gold</span></div>
+          <div class="template-swatch t-forest-white"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Forest &amp; White</span></div>
+          <div class="template-swatch t-corporate"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Corporate Blue</span></div>
+          <div class="template-swatch t-rose"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Rose Editorial</span></div>
+          <div class="template-swatch t-teal-clean"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Teal &amp; Clean</span></div>
+          <div class="template-swatch t-mono"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Monochrome Pro</span></div>
+          <div class="template-swatch t-purple"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Purple Modern</span></div>
+          <div class="template-swatch t-warm"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Warm Executive</span></div>
+          <div class="template-swatch t-coral"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Coral &amp; White</span></div>
+          <div class="template-swatch t-sage-neutral"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Sage Neutral</span></div>
+          <div class="template-swatch t-tech-dark"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Tech Dark</span></div>
+          <div class="template-swatch t-ocean-light"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Ocean Light</span></div>
+          <div class="template-swatch t-ruby"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Ruby Classic</span></div>
+          <div class="template-swatch t-glass"><div class="swatch-lines">
+              <div class="swatch-accent-line"></div>
+              <div class="swatch-headline"></div>
+              <div class="swatch-body"></div>
+              <div class="swatch-body swatch-body-short"></div>
+            </div>
+            <span class="template-name">Glass &amp; Light</span></div>
         </div>
       </div>
     </section>
