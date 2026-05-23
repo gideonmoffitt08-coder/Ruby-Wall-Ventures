@@ -30,27 +30,28 @@
     .template-swatch { border-radius: var(--radius-sm); aspect-ratio: 16/9; display: flex; align-items: flex-end; padding: 10px; border: 1px solid var(--border-light); position: relative; overflow: hidden; transition: all var(--transition); }
     .template-swatch:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
     .template-name { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; color: rgba(255,255,255,0.9); text-transform: uppercase; text-shadow: 0 1px 4px rgba(0,0,0,0.6); position: relative; z-index: 1; }
-    .t-consulting { background: linear-gradient(135deg, #c0392b, #ffffff); }
-    .t-pitch-dark { background: linear-gradient(135deg, #0d0d0d, #1a0000); }
-    .t-blueprint { background: linear-gradient(135deg, #0d47a1, #1565c0); }
-    .t-executive { background: linear-gradient(135deg, #1c1c1c, #2d2d2d); }
+    /* Template swatches matched to actual Meridian app */
+    .t-consulting { background: linear-gradient(135deg, #c0392b 40%, #ffffff 100%); }
+    .t-pitch-dark { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #f5a623 100%); }
+    .t-blueprint { background: linear-gradient(135deg, #1565c0 50%, #ffffff 100%); }
+    .t-executive { background: linear-gradient(135deg, #111111 50%, #2d2d2d 100%); }
     .t-azure { background: linear-gradient(135deg, #1565c0, #42a5f5); }
     .t-kickoff { background: linear-gradient(135deg, #bf360c, #e64a19); }
-    .t-navy-gold { background: linear-gradient(135deg, #0d1b2a, #1b2a4a); }
-    .t-forest-white { background: linear-gradient(135deg, #1b5e20, #f1f8e9); }
+    .t-navy-gold { background: linear-gradient(135deg, #0d1b2a 0%, #1b2a4a 60%, #f5a623 100%); }
+    .t-forest-white { background: linear-gradient(135deg, #1b5e20 40%, #e8f5e9 100%); }
     .t-corporate { background: linear-gradient(135deg, #1a237e, #3949ab); }
-    .t-rose { background: linear-gradient(135deg, #880e4f, #c0392b); }
+    .t-rose { background: linear-gradient(135deg, #880e4f 40%, #c0392b 100%); }
     .t-teal-clean { background: linear-gradient(135deg, #00695c, #4db6ac); }
-    .t-mono { background: linear-gradient(135deg, #212121, #ffffff); }
+    .t-mono { background: linear-gradient(135deg, #1a1a1a 50%, #ffffff 100%); }
     .t-purple { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
-    .t-warm { background: linear-gradient(135deg, #6d4c41, #a1887f); }
-    .t-coral { background: linear-gradient(135deg, #e64a19, #ffffff); }
+    .t-warm { background: linear-gradient(135deg, #5d3a1a, #a0522d); }
+    .t-coral { background: linear-gradient(135deg, #e64a19 40%, #ffccbc 100%); }
     .t-sage-neutral { background: linear-gradient(135deg, #33691e, #8bc34a); }
     .t-tech-dark { background: linear-gradient(135deg, #0a0a0a, #111827); }
-    .t-ocean-light { background: linear-gradient(135deg, #006064, #80deea); }
+    .t-ocean-light { background: linear-gradient(135deg, #006064, #26c6da); }
     .t-ruby { background: linear-gradient(135deg, #b71c1c, #e53935); }
-    .t-glass { background: linear-gradient(135deg, #e0e0e0, #ffffff); }
-    .t-forest-white .template-name, .t-mono .template-name, .t-coral .template-name, .t-glass .template-name { color: rgba(0,0,0,0.7); }
+    .t-glass { background: linear-gradient(135deg, #e8e8e8, #ffffff); }
+    .t-forest-white .template-name, .t-mono .template-name, .t-coral .template-name, .t-glass .template-name { color: rgba(0,0,0,0.75); }
     .transitions-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; }
     .transition-chip { background: var(--dark-3); border: 1px solid var(--border-dark); color: var(--gray-light); font-size: 0.85rem; font-weight: 500; padding: 0.6rem 1.2rem; border-radius: 6px; }
     .fonts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
